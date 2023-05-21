@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary;
+}
+
+.main-wrapper {
+  position: relative;
+
+  .main-content {
+    min-height: 82vh;
+
+    .container {
+      // min-height: 100vh;
+      .profile-identity {
+        .profile-section {
+          background-color: white;
+          .profile-image-wrapper {
+            img {
+              object-fit: cover;
+              margin: auto;
+              width: 14em;
+            }
+          }
+        }
+
+        .identity-section {
+          background-color: white;
+        }
+
+        .education-section {
+          background-color: white;
+        }
+      }
+    }
+
+    .footer {
+      background-color: $blue;
+      color: white;
+    }
+  }
+}
+
+.footer {
+  background-color: $blue;
+  color: white;
+}

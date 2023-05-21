@@ -1,0 +1,66 @@
+.aside-sidebar {
+  background-color: $navy;
+  width: 20em;
+  height: 100%;
+  position: absolute;
+  left: -20em;
+  transition: 0.7s;
+  color: white;
+  z-index: 98;
+
+  .sidebar {
+    .link-sidebar {
+      ul {
+        list-style: none;
+        .link-item {
+          .nav-link:hover {
+            background-color: white;
+            color: $blue;
+          }
+
+          .accordion {
+            .accordion-item {
+              // background-color: $blue;
+
+              .accordion-header {
+                .accordion-button {
+                  background-color: white;
+                  color: $blue;
+                }
+
+                .collapsed {
+                  background-color: $blue;
+                  color: white;
+                }
+
+                .accordion-button:hover {
+                  background-color: white;
+                  color: $blue;
+                }
+
+                .accordion-button:hover.accordion-button::after {
+                  content: "";
+                  background-image: url(../img/Dropdownbiru.png);
+                }
+
+                .accordion-button::after {
+                  content: "";
+                  background-image: url(../img/Dropdownbiru.png);
+                }
+
+                .collapsed::after {
+                  content: "";
+                  background-image: url(../img/Dropdown.png);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.aside-sidebar.active {
+  left: 0;
+}

@@ -1,0 +1,23 @@
+.login-card {
+  background-color: #fff;
+  .logo {
+    img {
+      width: 60px;
+    }
+  }
+  form {
+    input {
+      height: 3rem;
+    }
+    .btn {
+      background-color: $blue;
+      height: 3rem;
+    }
+  }
+  .login-footer {
+    a {
+      text-decoration: none;
+      color: $navy;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@media screen and (max-width: 992px) {
+  // navbar
+  .navbar {
+    background-color: $blue;
+    color: white;
+    .container {
+      .logo-humburger {
+        .logo {
+          .logo-image {
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  //   sidebar
+  .main-wrapper {
+    position: relative;
+
+    .aside-sidebar {
+      background-color: $blue;
+      width: 17em;
+      height: 100%;
+      position: absolute;
+      left: -17em;
+      transition: 0.7s;
+      color: white;
+
+      .sidebar {
+        .link-sidebar {
+          ul {
+            list-style: none;
+            .link-item {
+              .nav-link:hover {
+                background-color: white;
+                color: $blue;
+              }
+
+              .accordion {
+                .accordion-item {
+                  .accordion-header {
+                    .accordion-button::after {
+                      content: "";
+                      background-image: url(../img/Dropdown.png);
+                    }
+                  }
+
+                  .accordion-collapse {
+                    .accordion-body {
+                      .link-wrapper {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .aside-sidebar.active {
+      left: 0;
+    }
+  }
+
+  .main-content {
+    min-height: 82vh;
+
+    .container {
+      .book-section {
+        .book-table {
+          .book-table-wrapper {
+            // overflow-x: scroll;
+          }
+        }
+      }
+    }
+  }
+}

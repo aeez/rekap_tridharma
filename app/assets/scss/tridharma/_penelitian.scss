@@ -1,0 +1,40 @@
+.penelitian-dosen {
+  .penelitian-wrapper {
+    .wrapper-body {
+      background-color: #fff;
+      .img {
+        object-fit: cover;
+        margin: auto;
+      }
+    }
+  }
+}
+
+// responsive table penelitian
+@media screen and (max-width: 720px) {
+  .penelitian-dosen {
+    .penelitian-wrapper {
+      .wrapper-body {
+        .table {
+          th {
+            width: 45% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 992px) {
+  .penelitian-dosen {
+    .penelitian-wrapper {
+      .wrapper-body {
+        .table {
+          th {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}
