@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tambah Dosen | Tri Dharma</title>
 
-    <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
+    <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
   </head>
   <body>
@@ -44,18 +44,6 @@
                             <div class="row justify-content-center">
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="nip" class="form-label"
-                                    >NIP</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="nip"
-                                    name="nip"
-                                    required
-                                  />
-                                </div>
-                                <div class="mb-3">
                                   <label for="nama" class="form-label"
                                     >Nama</label
                                   >
@@ -64,6 +52,42 @@
                                     class="form-control"
                                     id="nama"
                                     name="nama"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="tempat_lahir" class="form-label"
+                                    >Tempat Lahir</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="tempat_lahir"
+                                    name="tempat_lahir"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="tanggal_lahir" class="form-label"
+                                    >Tanggal Lahir</label
+                                  >
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="tanggal_lahir"
+                                    name="tanggal_lahir"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="jenisKelamin" class="form-label"
+                                    >Jenis Kelamin</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="jenis_kelamin"
+                                    name="jenis_kelamin"
                                     required
                                   />
                                 </div>
@@ -82,6 +106,21 @@
                                   />
                                 </div>
                                 <div class="mb-3">
+                                  <label for="nip" class="form-label"
+                                    >NIP</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nip"
+                                    name="nip"
+                                    required
+                                  />
+                                </div>
+
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="mb-3">
                                   <label for="nidn" class="form-label"
                                     >NIDN</label
                                   >
@@ -93,32 +132,6 @@
                                     required
                                   />
                                 </div>
-                                <div class="mb-3">
-                                  <label for="jenisKelamin" class="form-label"
-                                    >Jenis Kelamin</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="jenis_kelamin"
-                                    name="jenis_kelamin"
-                                    required
-                                  />
-                                </div>
-                                <div class="mb-3">
-                                  <label for="tempat_lahir" class="form-label"
-                                    >Tempat Lahir</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="tempat_lahir"
-                                    name="tempat_lahir"
-                                    required
-                                  />
-                                </div>
-                              </div>
-                              <div class="col-lg-6">
                                 <div class="mb-3">
                                   <label for="alamat_email" class="form-label"
                                     >Alamat Email</label
@@ -133,7 +146,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label for="no_hp" class="form-label"
-                                    >Nomor Telepon</label
+                                    >Nomor Handphone</label
                                   >
                                   <input
                                     type="text"
@@ -144,7 +157,7 @@
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="alamat" class="form-label"
+                                  <label for="alamat_kantor" class="form-label"
                                     >Alamat Kantor</label
                                   >
                                   <input
@@ -167,40 +180,31 @@
                                     required
                                   />
                                 </div>
-                                <div class="mb-3">
-                                  <label for="mata_kuliah" class="form-label"
-                                    >Mata Kuliah yang diampu</label
+
+                                <div class="mb-3 mb-lg-0">
+                                  <label for="password" class="form-label"
+                                    >Password</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="mata_kuliah"
-                                    name="mata_kuliah"
+                                    id="password"
+                                    name="password"
                                     required
                                   />
                                 </div>
-                                <div class="mb-3 mb-lg-0">
-                                  <label for="tanggal_lahir" class="form-label"
-                                    >Tanggal Lahir</label
-                                  >
-                                  <input
-                                    type="date"
-                                    class="form-control"
-                                    id="tanggal_lahir"
-                                    name="tanggal_lahir"
-                                    required
-                                  />
-                                </div>
+
                               </div>
-                            <div class="">
+                              <div class="">
                                   <button
                                     type="submit"
                                     name="submit"
-                                    class="btn btn-blue btn-outline-light"
+                                    class="btn btn-blue btn-outline-success"
                                   >
                                     Tambah
                                   </button>
                                 </div>
+
                             </div>
                           </form>
                          <!-- form tambah dosen -->

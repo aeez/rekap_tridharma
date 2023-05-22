@@ -1,9 +1,3 @@
-<?php
-include('../config/functions/functionDosen.php');
-$dosen = query("SELECT * FROM tb_dosen");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,11 +23,11 @@ $dosen = query("SELECT * FROM tb_dosen");
 
           <!-- main content -->
           <section class="main-content w-100 bg-light">
-            <div class="container py-4">
+            <div class="container py-4">  
               <!-- welcome -->
               <div class="row welcome p-2 justify-content-center">
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h3 class="fw-bold">Profil Dosen</h3>
+                  <h3 class="fw-bold">Riwayat Pendidikan</h3>
                 </div>
               </div>
 
@@ -44,7 +38,7 @@ $dosen = query("SELECT * FROM tb_dosen");
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="dosen_tambah.php" class="btn btn-blue">Tambah Profil</a>
+                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Riwayat Pendidikan</a>
                         </div>
                       </div>
                     </div>
@@ -60,17 +54,38 @@ $dosen = query("SELECT * FROM tb_dosen");
                               <th>Action</th>
                             </thead>
                             <tbody>
-                              <?php $no = 1; ?>
-                              <?php foreach ($dosen as $dataDosen) : ?>
                               <tr>
-                                <td class="fw-bold"><?= $no++; ?></td>
-                                <td><?= $dataDosen['nidn']; ?></td>
-                                <td><?= $dataDosen['nama']; ?></td>
+                                <td class="fw-bold">1</td>
+                                <td>12345678</td>
+                                <td>John Doe</td>
                                 <td>
-                                  <a href="dosen_detail.php?id_dosen=<?= $dataDosen['id_dosen']; ?>" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
-                              <?php endforeach; ?>
+                              <tr>
+                                <td class="fw-bold">2</td>
+                                <td>13716163</td>
+                                <td>Jontor</td>
+                                <td>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fw-bold">3</td>
+                                <td>71289382</td>
+                                <td>Micho</td>
+                                <td>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fw-bold">4</td>
+                                <td>10237598</td>
+                                <td>Misel</td>
+                                <td>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
+                                </td>
+                              </tr>
                             </tbody>
                           </table>
                         </div>

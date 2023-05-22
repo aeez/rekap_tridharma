@@ -57,6 +57,13 @@
   background-color: white;
   color: #002743;
 }
+.aside-sidebar .sidebar .link-sidebar ul .link-item .btn-logout {
+  color: white;
+}
+.aside-sidebar .sidebar .link-sidebar ul .link-item .btn-logout:hover {
+  background-color: white;
+  color: #002743;
+}
 .aside-sidebar .sidebar .link-sidebar ul .link-item .accordion .accordion-item .accordion-header .accordion-button {
   background-color: white;
   color: #002743;

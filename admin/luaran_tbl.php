@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
 
-    <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
+    <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
   </head>
   <body>
@@ -84,42 +84,42 @@
                                         <div class="accordion-body">
                                             <div class="link-wrapper">
                                             <a
-                                                href="buku.php"
+                                                href="buku_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Buku</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="jurnal.php"
+                                                href="jurnal_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
                                                 >Jurnal</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="makalah.php"
+                                                href="makalah_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Pemakalah Seminar Ilmiah</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="hki.php"
+                                                href="hki_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >HKI</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="kebijakan.php"
+                                                href="kebijakan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Merumuskan Kebijakan publik</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="penghargaan.php"
+                                                href="penghargaan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light"
                                                 >Penghargaan Dalam</a
                                             >
@@ -160,42 +160,42 @@
                                         <div class="accordion-body">
                                             <div class="link-wrapper">
                                             <a
-                                                href="buku.php"
+                                                href="buku_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Buku</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="jurnal.php"
+                                                href="jurnal_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
                                                 >Jurnal</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="makalah.php"
+                                                href="makalah_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Pemakalah Seminar Ilmiah</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="hki.php"
+                                                href="hki_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >HKI</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="kebijakan.php"
+                                                href="kebijakan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Merumuskan Kebijakan publik</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="penghargaan.php"
+                                                href="penghargaan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light"
                                                 >Penghargaan Dalam</a
                                             >
@@ -236,42 +236,42 @@
                                         <div class="accordion-body">
                                             <div class="link-wrapper">
                                             <a
-                                                href="buku.php"
+                                                href="buku_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Buku</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="jurnal.php"
+                                                href="jurnal_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
                                                 >Jurnal</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="makalah.php"
+                                                href="makalah_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Pemakalah Seminar Ilmiah</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="hki.php"
+                                                href="hki_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >HKI</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="kebijakan.php"
+                                                href="kebijakan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Merumuskan Kebijakan publik</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="penghargaan.php"
+                                                href="penghargaan_detail.php"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light"
                                                 >Penghargaan Dalam</a
                                             >
