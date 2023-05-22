@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tambah Dosen | Tri Dharma</title>
-    
+    <title>Ubah Dosen | Tri Dharma</title>
+
     <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
 
   </head>
@@ -29,7 +29,7 @@
                 class="row welcome py-2 mb-4 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h2 class="fw-bold">Tambah Dosen</h2>
+                  <h2 class="fw-bold">Ubah Dosen</h2>
                 </div>
               </div>
               <!-- tambah dosen -->
@@ -39,20 +39,11 @@
                     <div class="wrapper-body rounded-4 p-4">
                       <div class="row tambah-dosen">
                         <div class="form-tambah">
-                          <form>
+                            <!-- form tambah start -->
+                          <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-6">
-                                <div class="mb-3">
-                                  <label for="nip" class="form-label"
-                                    >NIP</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="nip"
-                                    required
-                                  />
-                                </div>
+                                <input type="hidden" name="id_dosen" value="<?= $dataDosen['id_dosen']; ?>">
                                 <div class="mb-3">
                                   <label for="nama" class="form-label"
                                     >Nama</label
@@ -61,6 +52,21 @@
                                     type="text"
                                     class="form-control"
                                     id="nama"
+                                    name="nama"
+                                    value="<?= $dataDosen['nama']; ?>"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="nip" class="form-label"
+                                    >NIP</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nip"
+                                    name="nip"
+                                    value="<?= $dataDosen['nip']; ?>"
                                     required
                                   />
                                 </div>
@@ -73,7 +79,9 @@
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="fungsionalJabatan"
+                                    id="jabatan_fungsional"
+                                    name="jabatan_fungsional"
+                                    value="<?= $dataDosen['jabatan_fungsional']; ?>"
                                     required
                                   />
                                 </div>
@@ -85,6 +93,8 @@
                                     type="text"
                                     class="form-control"
                                     id="nidn"
+                                    name="nidn"
+                                    value="<?= $dataDosen['nidn']; ?>"
                                     required
                                   />
                                 </div>
@@ -95,42 +105,50 @@
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="jenisKelamin"
+                                    id="jenis_kelamin"
+                                    name="jenis_kelamin"
+                                    value="<?= $dataDosen['jenis_kelamin']; ?>"
                                     required
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="ttl" class="form-label"
-                                    >Tempat, Tanggal Lahir</label
+                                  <label for="tempat_lahir" class="form-label"
+                                    >Tempat Lahir</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="ttl"
+                                    id="tempat_lahir"
+                                    name="tempat_lahir"
+                                    value="<?= $dataDosen['tempat_lahir']; ?>"
                                     required
                                   />
                                 </div>
                               </div>
                               <div class="col-lg-6">
                                 <div class="mb-3">
-                                  <label for="email" class="form-label"
+                                  <label for="alamat_email" class="form-label"
                                     >Alamat Email</label
                                   >
                                   <input
                                     type="email"
                                     class="form-control"
-                                    id="email"
+                                    id="alamat_email"
+                                    name="alamt_email"
+                                    value="<?= $dataDosen['alamat_email']; ?>"
                                     required
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="nohp" class="form-label"
+                                  <label for="no_hp" class="form-label"
                                     >Nomor Telepon</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="nohp"
+                                    id="no_hp"
+                                    name="no_hp"
+                                    value="<?= $dataDosen['no_hp']; ?>"
                                     required
                                   />
                                 </div>
@@ -141,7 +159,9 @@
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="alamat"
+                                    id="alamat_kantor"
+                                    name="alamat_kantor"
+                                    value="<?= $dataDosen['alamat_kantor']; ?>"
                                     required
                                   />
                                 </div>
@@ -153,31 +173,50 @@
                                     type="text"
                                     class="form-control"
                                     id="lulusan"
+                                    name="lulusan"
+                                    value="<?= $dataDosen['lulusan']; ?>"
                                     required
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="mkampu" class="form-label"
+                                  <label for="mata_kuliah" class="form-label"
                                     >Mata Kuliah yang diampu</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="mkampu"
+                                    id="mata_kuliah"
+                                    name="mata_kuliah"
+                                    value="<?= $dataDosen['mata_kuliah']; ?>"
                                     required
                                   />
                                 </div>
-                                <div class="mb-3 mt-5">
-                                  <button
-                                    type="submit"
-                                    class="btn btn-blue btn-outline-light"
+                                <div class="mb-3 mb-lg-0">
+                                  <label for="tanggal_lahir" class="form-label"
+                                    >Tanggal Lahir</label
                                   >
-                                    Tambah
-                                  </button>
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="tanggal_lahir"
+                                    name="tanggal_lahir"
+                                    value="<?= $dataDosen['tanggal_lahir']; ?>"
+                                    required
+                                  />
                                 </div>
                               </div>
+                            <div class="">
+                                  <button
+                                    type="submit"
+                                    name="submit"
+                                    class="btn btn-blue btn-outline-light"
+                                  >
+                                    Ubah
+                                  </button>
+                                </div>
                             </div>
                           </form>
+                         <!-- form tambah dosen -->
                         </div>
                       </div>
                     </div>
