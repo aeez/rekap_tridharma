@@ -23,11 +23,11 @@
 
           <!-- main content -->
           <section class="main-content w-100 bg-light">
-            <div class="container py-4">
+            <div class="container py-4">  
               <!-- welcome -->
               <div class="row welcome p-2 justify-content-center">
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h3 class="fw-bold">Profil Dosen</h3>
+                  <h3 class="fw-bold">Riwayat Pendidikan</h3>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="dosen_tambah.php" class="btn btn-blue">Tambah Profil</a>
+                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Riwayat Pendidikan</a>
                         </div>
                       </div>
                     </div>
@@ -59,7 +59,7 @@
                                 <td>12345678</td>
                                 <td>John Doe</td>
                                 <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -67,7 +67,7 @@
                                 <td>13716163</td>
                                 <td>Jontor</td>
                                 <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -75,7 +75,7 @@
                                 <td>71289382</td>
                                 <td>Micho</td>
                                 <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -83,7 +83,7 @@
                                 <td>10237598</td>
                                 <td>Misel</td>
                                 <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                             </tbody>
