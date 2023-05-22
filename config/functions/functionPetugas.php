@@ -2,12 +2,9 @@
 include('../config/conn.php');
 
 if (!isset($_SESSION['login'])) {
-    header('location: auth_login.php');
+    header('location: login.php');
 }
 
-if ($_SESSION['level'] == 'customer') {
-    header('location:index.php');
-}
 
 function query($query)
 {
@@ -25,7 +22,7 @@ function detail($id)
 {
 
     global $conn;
-    $result = mysqli_query($conn, "SELECT * FROM petugas WHERE id_petugas = '$id'");
+    $result = mysqli_query($conn, "SELECT * FROM tb_users WHERE id_user = '$id'");
 
     $row = mysqli_fetch_assoc($result);
 
@@ -41,7 +38,7 @@ function tambah($request)
     $password = password_hash(htmlspecialchars($request['password']), PASSWORD_DEFAULT);
     $level = htmlspecialchars($request['level']);
 
-    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM petugas WHERE username = '$username'"))) {
+    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username'"))) {
         echo "<script>
                 alert('Username sudah ada!');
             </script>";
@@ -49,7 +46,7 @@ function tambah($request)
     }
 
     $query = "INSERT INTO petugas VALUES
-            ('','$username','$password','$nama_petugas','$level',Now(),Now())";
+            ('','$username','$password','$nama_petugas','$level')";
 
     mysqli_query($conn, $query);
 
