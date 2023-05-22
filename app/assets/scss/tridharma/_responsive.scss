@@ -78,4 +78,54 @@
       }
     }
   }
+
+  // Luaran
+  .main-content {
+    .container {
+      .table-section {
+        .wrapper-table {
+          .table-profil {
+            .col-12 {
+              .table-responsive {
+                .table {
+                  tbody {
+                    tr {
+                      .button {
+                        width: 100%;
+                        .accordion {
+                          .accordion-item {
+                            .accordion-button {
+                              width: 100%;
+                            }
+                          }
+
+                          .accordion-button::after {
+                            content: "";
+                            background-image: url(../img/Dropdownbiru.png);
+                          }
+
+                          .collapsed::after {
+                            content: "";
+                            background-image: url(../img/Dropdown.png);
+                          }
+
+                          .accordion-body {
+                            .link-wrapper {
+                              .nav-link {
+                                width: 100%;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

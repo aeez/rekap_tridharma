@@ -3,6 +3,11 @@
   color: white;
 }
 
+.list-blue {
+  background-color: rgba(0, 39, 67, 0.8);
+  color: white;
+}
+
 .login-card {
   background-color: #fff;
 }
@@ -108,14 +113,14 @@
 .main-wrapper .main-content .container .profile-identity .education-section {
   background-color: white;
 }
-.main-wrapper .main-content .footer {
-  background-color: #002743;
-  color: white;
-}
 
 .footer {
   background-color: #002743;
   color: white;
+}
+
+.main-content .container .beranda-section .wrapper-item .beranda-item .beranda-item-wrapper {
+  background-color: white;
 }
 
 .main-content .container .table-section .wrapper-table {
@@ -199,6 +204,24 @@
   background-color: white;
 }
 
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button {
+  width: 50%;
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-item .accordion-button {
+  width: 50%;
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-button::after {
+  content: "";
+  background-image: url(../img/Dropdownbiru.png);
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .collapsed::after {
+  content: "";
+  background-image: url(../img/Dropdown.png);
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-body .link-wrapper .nav-link {
+  width: 50%;
+}
+
 @media screen and (max-width: 992px) {
   .navbar {
     background-color: #002743;
@@ -235,5 +258,22 @@
   }
   .main-content {
     min-height: 82vh;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button {
+    width: 100%;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-item .accordion-button {
+    width: 100%;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-button::after {
+    content: "";
+    background-image: url(../img/Dropdownbiru.png);
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .collapsed::after {
+    content: "";
+    background-image: url(../img/Dropdown.png);
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-body .link-wrapper .nav-link {
+    width: 100%;
   }
 }

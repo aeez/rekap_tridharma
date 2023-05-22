@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
 
-    <?php include ('./app/layouts/link.php'); ?>
+    <?php include ('./app/layouts/link1.php'); ?>
   </head>
   <body>
     <div class="wrapper-content">
@@ -37,7 +37,7 @@
 
               <!-- profil -->
               <div
-                class="row profile-identity justify-content-center justify-content-lg-between"
+                class="row profile-identity justify-content-center justify-content-lg-between mb-4"
               >
                 <div class="col-11 col-lg-3 profile-section rounded-4 py-4">
                   <div
@@ -97,6 +97,71 @@
                 <!-- education -->
               </div>
               <!-- profil -->
+
+              <!-- item -->
+              <div class="row item-section">
+                <div class="col-lg-12">
+                  <div class="wrapper-item">
+                    <div class="row item-content justify-content-around mb-3">
+                      <div class="col-12 col-lg-6 col-item">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Penelitian</span>
+                          <p class="fs-4 fw-bold m-0">5</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Pengabdian Masyarakat</span>
+                          <p class="fs-4 fw-bold m-0">2</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row item-content justify-content-around mb-3">
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Buku</span>
+                          <p class="fs-4 fw-bold m-0">3</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Jurnal</span>
+                          <p class="fs-4 fw-bold m-0">1</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row item-content justify-content-around mb-3">
+                      <div class="col-12 col-lg-6 ">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Pemakalah Seminar Ilmiah</span>
+                          <p class="fs-4 fw-bold m-0">2</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah HKI</span>
+                          <p class="fs-4 fw-bold m-0">3</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row item-content justify-content-around mb-3">
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Merumuskan Kebijakan Publik</span>
+                          <p class="fs-4 fw-bold m-0">4</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
+                          <span>Jumlah Pengabdian Penghargaan Dalam</span>
+                          <p class="fs-4 fw-bold m-0">1</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- item -->
             </div>
           </section>
           <!-- main content -->

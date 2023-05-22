@@ -15,7 +15,7 @@
       <!-- navbar -->
 
       <!-- main  -->
-      <main>
+      <main>  
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -38,7 +38,7 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Profil</a>
+                          <a href="dosen_tambah.php" class="btn btn-blue">Tambah Profil</a>
                         </div>
                       </div>
                     </div>
@@ -59,7 +59,7 @@
                                 <td>12345678</td>
                                 <td>John Doe</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -67,7 +67,7 @@
                                 <td>13716163</td>
                                 <td>Jontor</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -75,7 +75,7 @@
                                 <td>71289382</td>
                                 <td>Micho</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -83,7 +83,7 @@
                                 <td>10237598</td>
                                 <td>Misel</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                             </tbody>

@@ -10,3 +10,8 @@ $primary: "Poppins", sans-serif;
   background-color: $blue;
   color: white;
 }
+
+.list-blue {
+  background-color: rgba($color: $blue, $alpha: 0.8);
+  color: white;
+}

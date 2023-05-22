@@ -4,101 +4,36 @@
         <div class="link-sidebar">
         <ul class="p-0 m-0">
             <li class="link-item mb-2">
-            <a href="index.php" class="nav-link px-3 py-2 rounded"
+            <a href="dashboard.php" class="nav-link px-3 py-2 rounded"
                 >Beranda</a
             >
             </li>
             <li class="link-item mb-2">
-            <a href="profil.php" class="nav-link px-3 py-2 rounded"
+            <a href="profil_tbl.php" class="nav-link px-3 py-2 rounded"
                 >Profil</a
             >
             </li>
             <li class="link-item mb-2">
-            <a href="riwayat.php" class="nav-link px-3 py-2 rounded"
+            <a href="riwayat_tbl.php" class="nav-link px-3 py-2 rounded"
                 >Riwayat Pendidikan</a
             >
             </li>
             <li class="link-item mb-2">
-            <a href="penelitian.php" class="nav-link px-3 py-2 rounded"
+            <a href="penelitian_tbl.php" class="nav-link px-3 py-2 rounded"
                 >Penelitian</a
             >
             </li>
             <li class="link-item mb-2">
-            <a href="pengabdian.php" class="nav-link px-3 py-2 rounded"
+            <a href="pengabdian_tbl.php" class="nav-link px-3 py-2 rounded"
                 >Pengabdian Masyarakat</a
             >
             </li>
             <li class="link-item mb-2">
-            <div
-                class="accordion accordion-flush"
-                id="accordionFlushExample"
+            <a href="luaran_tbl.php" class="nav-link px-3 py-2 rounded"
+                >Luaran Hasil</a
             >
-                <div class="accordion-item rounded-3">
-                <p class="accordion-header rounded m-0">
-                    <button
-                    class="accordion-button collapsed px-3 py-2 rounded"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
-                    >
-                    Luaran Hasil
-                    </button>
-                </p>
-                <div
-                    id="flush-collapseOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample"
-                >
-                    <div class="accordion-body">
-                    <div class="link-wrapper">
-                        <a
-                        href="buku.html"
-                        class="nav-link px-2 py-1 rounded"
-                        >Buku</a
-                        >
-                    </div>
-                    <div class="link-wrapper">
-                        <a
-                        href="jurnal.html"
-                        class="nav-link px-2 py-1 rounded m-0"
-                        >Jurnal</a
-                        >
-                    </div>
-                    <div class="link-wrapper">
-                        <a
-                        href="makalah.html"
-                        class="nav-link px-2 py-1 rounded"
-                        >Pemakalah Seminar Ilmiah</a
-                        >
-                    </div>
-                    <div class="link-wrapper">
-                        <a
-                        href="hki.html"
-                        class="nav-link px-2 py-1 rounded"
-                        >HKI</a
-                        >
-                    </div>
-                    <div class="link-wrapper">
-                        <a
-                        href="kebijakan.html"
-                        class="nav-link px-2 py-1 rounded"
-                        >Merumuskan Kebijakan publik</a
-                        >
-                    </div>
-                    <div class="link-wrapper">
-                        <a
-                        href="penghargaan.html"
-                        class="nav-link px-2 py-1 rounded"
-                        >Penghargaan Dalam</a
-                        >
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
             </li>
+            
             <li class="link-item d-block d-lg-none">
             <button class="btn text-light px-3 py-2 rounded">
                 Log Out
