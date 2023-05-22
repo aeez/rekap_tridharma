@@ -3,7 +3,9 @@ include('../config/functions/functionAuth.php');
 
 if (isset($_SESSION['login']) && (isset($_SESSION['level']) == 'admin') ) {
     header('location: dashboard.php');
-} 
+} else if (isset($_SESSION['login']) && (isset($_SESSION['level']) == 'dosen')) {
+    header('location:../index.php');
+}
 
 if (isset($_POST['login'])) {
 

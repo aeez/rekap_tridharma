@@ -1,3 +1,9 @@
+<?php
+include('../config/functions/functionDosen.php');
+$dosen = query("SELECT * FROM tb_dosen");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,38 +60,17 @@
                               <th>Action</th>
                             </thead>
                             <tbody>
+                              <?php $no = 1; ?>
+                              <?php foreach ($dosen as $dataDosen) : ?>
                               <tr>
-                                <td class="fw-bold">1</td>
-                                <td>12345678</td>
-                                <td>John Doe</td>
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataDosen['nidn']; ?></td>
+                                <td><?= $dataDosen['nama']; ?></td>
                                 <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="dosen_detail.php?id_dosen=<?= $dataDosen['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td class="fw-bold">2</td>
-                                <td>13716163</td>
-                                <td>Jontor</td>
-                                <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">3</td>
-                                <td>71289382</td>
-                                <td>Micho</td>
-                                <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">4</td>
-                                <td>10237598</td>
-                                <td>Misel</td>
-                                <td>
-                                  <a href="profil_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
+                              <?php endforeach; ?>
                             </tbody>
                           </table>
                         </div>
