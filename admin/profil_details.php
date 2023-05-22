@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TRIDHARMA</title>
+    <title>TRIDHARMA ADMIN</title>
 
-    <?php include ('./app/layouts/link.php'); ?>
+    <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
 
   </head>
   <body>
     <div class="wrapper-content">
       <!-- navbar -->
-      <?php include ('./app/layouts/navbar.php'); ?>
+      <?php include ('../app/layouts/layout_admin/navbar_admin.php'); ?>
       <!-- navbar -->
 
       <!-- main  -->
       <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
-          <?php include ('./app/layouts/sidebar.php'); ?>
+          <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
           <!-- sidebar -->
 
           <!-- main content -->
@@ -36,14 +36,13 @@
                 </div>
               </div>
               <!-- ringkasan profil -->
-              <div class="row profile-dosen">
+              <div class="row profile-dosen mb-3">
                 <div class="col-lg-12">
                   <div class="profile-wrapper">
                     <div class="wrapper-body rounded-4 p-4">
-                      <h5 class="wrapper-title fw-bold">1. Ringkasan Profil</h5>
                       <div class="row align-items-center">
                         <div class="col-lg-3 text-center my-4 px-xl-0">
-                          <img src="app/assets/img/profil.jfif" alt="Profile" />
+                          <img src="../app/assets/img/profil.jfif" alt="Profile" />
                         </div>
                         <div class="col-lg-9 pt-lg-4">
                           <div class="table-responsive ps-lg-3 ps-xl-0">
@@ -80,7 +79,8 @@
                           </div>
                         </div>
                       </div>
-                      <row class="row align-items-center">
+
+                      <div class="row align-items-center">
                         <div class="col-lg-12">
                           <div class="table-responsive">
                             <table
@@ -115,81 +115,23 @@
                             </table>
                           </div>
                         </div>
-                      </row>
+                      </div>
+
+                      <div class="row button">
+                        <div class="col-12 d-flex justify-content-end">
+                          <div class="button-edit-wrapper me-2" style="width: 5em;">
+                            <a class="btn-blue btn w-100" style="background-color: #002743; color:white">Edit</a>
+                          </div>
+                          <div class="button-hapus-wrapper" style="width: 5em;">
+                            <a class="btn-blue btn w-100" style="border: 1px solid #002743;">Hapus</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- ringkasan profil -->
-              <div class="row profile-dosen my-5">
-                <div class="col-lg-12">
-                  <div class="profile-wrapper">
-                    <div class="wrapper-body rounded-4 p-4">
-                      <h5 class="wrapper-title fw-bold">
-                        2. Riwayat Pendidikan
-                      </h5>
-                      <row class="row align-items-center mt-4">
-                        <div class="col-lg-12">
-                          <div class="table-responsive">
-                            <table
-                              class="table table-2 table-striped table-borderless"
-                            >
-                              <tbody>
-                                <tr>
-                                  <th width="20%">Jenjang Pendidikan</th>
-                                  <th>S1</th>
-                                  <th>S2</th>
-                                  <th>S3</th>
-                                </tr>
-                                <tr>
-                                  <th>Nama Perguruan Tinggi</th>
-                                  <td>Universitas Negeri Medan</td>
-                                  <td>Universitas Negeri Medan</td>
-                                  <td>Universitas Negeri Medan</td>
-                                </tr>
-                                <tr>
-                                  <th>Bidang Ilmu</th>
-                                  <td>Ilmu Komputer</td>
-                                  <td>Ilmu Komputer</td>
-                                  <td>Ilmu Komputer</td>
-                                </tr>
-                                <tr>
-                                  <th>Tahun Masuk-Lulus</th>
-                                  <td>2010-2014</td>
-                                  <td>2010-2014</td>
-                                  <td>2010-2014</td>
-                                </tr>
-                                <tr>
-                                  <th>Judul Skripsi/Thesis/Disertasi</th>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th>Nama Pembimbing/Promotor</th>
-                                  <td>Joen Doe</td>
-                                  <td>Joen Doe</td>
-                                  <td>Joen Doe</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </row>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- riwayat pendidikan -->
 
               <!-- riwayat pendidikan -->
             </div>
@@ -198,9 +140,9 @@
         </div>
       </main>
 
-      <?php include ('./app/layouts/footer.php'); ?>
+      <?php include ('../app/layouts/layout_admin/footer_admin.php'); ?>
       <!-- main  -->
     </div>
-    <?php include ('./app/layouts/js.php'); ?>
+    <?php include ('../app/layouts/layout_admin/js_admin.php'); ?>
   </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
 
-    <?php include ('./app/layouts/tridharma_layout/link.php'); ?>
+    <?php include ('./app/layouts/link.php'); ?>
 
   </head>
   <body>
@@ -85,6 +85,6 @@
       </main>
       <!-- main  -->
     </div>
-    <?php include ('./app/layouts/tridharma_layout/js.php'); ?>
+    <?php include ('./app/layouts/js.php'); ?>
   </body>
 </html>

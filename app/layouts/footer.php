@@ -1,11 +1,5 @@
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script>
-                    document.write(new Date().getFullYear());
-                </script> - developed by
-                <b><a href="https://indrijunanda.gitlab.io/" target="_blank">Kelompok 18</a></b>
-            </span>
-        </div>
+<footer class="footer py-3">
+    <div class="text-center">
+        <small>Copyright 2023-2024 | Universitas Negeri Medan</small>
     </div>
 </footer>

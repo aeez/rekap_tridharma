@@ -1,44 +1,8 @@
-.profile-dosen {
-  .profile-wrapper {
-    .wrapper-body {
-      background-color: #fff;
-      .img {
-        object-fit: cover;
-        margin: auto;
-      }
-    }
-  }
-}
-
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #f8f9fa !important; //
-}
-// responsive table profil
-@media screen and (max-width: 720px) {
-  .profile-dosen {
-    .profile-wrapper {
-      .wrapper-body {
-        .table,
-        .table-2 {
-          th {
-            width: 45% !important;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 720px) and (max-width: 992px) {
-  .profile-dosen {
-    .profile-wrapper {
-      .wrapper-body {
-        .table-2 {
-          th {
-            width: 30%;
-          }
-        }
+.main-content {
+  .container {
+    .table-section {
+      .wrapper-table {
+        background-color: white;
       }
     }
   }

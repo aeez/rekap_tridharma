@@ -1,0 +1,25 @@
+.profile-dosen {
+  .profile-wrapper {
+    .wrapper-body {
+      background-color: #fff;
+      .img {
+        object-fit: cover;
+        margin: auto;
+      }
+
+      .button {
+        .col-12 {
+          .button-edit-wrapper,
+          .button-hapus-wrapper {
+            width: 5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f8f9fa !important; //
+}

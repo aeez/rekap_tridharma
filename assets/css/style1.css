@@ -1,8 +1,3 @@
-.btn-blue {
-  background-color: #002743;
-  color: white;
-}
-
 .login-card {
   background-color: #fff;
 }
@@ -132,6 +127,15 @@
 .profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper,
 .profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper {
   width: 5em;
+}
+.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper .button-edit,
+.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper .button-edit {
+  background-color: #002743;
+  color: white;
+}
+.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper .button-hapus,
+.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper .button-hapus {
+  border: 1px solid #002743;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td,

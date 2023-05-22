@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
 
-    <?php include ('./app/layouts/tridharma_layout/link.php'); ?>
+    <?php include ('./app/layouts/link.php'); ?>
   </head>
   <body>
     <div class="wrapper-content">
       <!-- navbar -->
-      <?php include ('./app/layouts/tridharma_layout/navbar.php'); ?>
+      <?php include ('./app/layouts/navbar.php'); ?>
       <!-- navbar -->
 
       <!-- main  -->
       <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
-          <?php include ('./app/layouts/tridharma_layout/sidebar.php'); ?>
+          <?php include ('./app/layouts/sidebar.php'); ?>
           <!-- sidebar -->
 
           <!-- main content -->
@@ -104,14 +104,14 @@
       </main>
 
       <!-- footer -->
-      <?php include ('./app/layouts/tridharma_layout/footer.php'); ?>
+      <?php include ('./app/layouts/footer.php'); ?>
       <!-- footer -->
       
       <!-- main  -->
     </div>
     
     <!-- js -->
-    <?php include ('./app/layouts/tridharma_layout/js.php'); ?>
+    <?php include ('./app/layouts/js.php'); ?>
     <!-- js -->
   </body>
 </html>
