@@ -18,6 +18,15 @@
             color: $blue;
           }
 
+          .btn-logout {
+            color: white;
+          }
+
+          .btn-logout:hover {
+            background-color: white;
+            color: $blue;
+          }
+
           .accordion {
             .accordion-item {
               .accordion-header {

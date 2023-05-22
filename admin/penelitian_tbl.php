@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
 
-    <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
+    <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
   </head>
   <body>
@@ -59,7 +59,7 @@
                                 <td>12345678</td>
                                 <td>John Doe</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -67,7 +67,7 @@
                                 <td>13716163</td>
                                 <td>Jontor</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -75,7 +75,7 @@
                                 <td>71289382</td>
                                 <td>Micho</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <tr>
@@ -83,7 +83,7 @@
                                 <td>10237598</td>
                                 <td>Misel</td>
                                 <td>
-                                  <a href="profil_details.php" class="btn btn-blue">Detail</a>
+                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                             </tbody>

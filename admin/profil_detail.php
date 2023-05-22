@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA ADMIN</title>
   
-    <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
+    <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
   </head>
   <body>
