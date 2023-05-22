@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tambah Dosen | Tri Dharma</title>
+    <title>Ubah Dosen | Tri Dharma</title>
 
     <?php include ('../app/layouts/layout_admin/link_admin2.php'); ?>
 
@@ -29,7 +29,7 @@
                 class="row welcome py-2 mb-4 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h2 class="fw-bold">Tambah Dosen</h2>
+                  <h2 class="fw-bold">Ubah Dosen</h2>
                 </div>
               </div>
               <!-- tambah dosen -->
@@ -43,18 +43,7 @@
                           <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-6">
-                                <div class="mb-3">
-                                  <label for="nip" class="form-label"
-                                    >NIP</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="nip"
-                                    name="nip"
-                                    required
-                                  />
-                                </div>
+                                <input type="hidden" name="id_dosen" value="<?= $dataDosen['id_dosen']; ?>">
                                 <div class="mb-3">
                                   <label for="nama" class="form-label"
                                     >Nama</label
@@ -64,6 +53,20 @@
                                     class="form-control"
                                     id="nama"
                                     name="nama"
+                                    value="<?= $dataDosen['nama']; ?>"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="nip" class="form-label"
+                                    >NIP</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nip"
+                                    name="nip"
+                                    value="<?= $dataDosen['nip']; ?>"
                                     required
                                   />
                                 </div>
@@ -78,6 +81,7 @@
                                     class="form-control"
                                     id="jabatan_fungsional"
                                     name="jabatan_fungsional"
+                                    value="<?= $dataDosen['jabatan_fungsional']; ?>"
                                     required
                                   />
                                 </div>
@@ -90,6 +94,7 @@
                                     class="form-control"
                                     id="nidn"
                                     name="nidn"
+                                    value="<?= $dataDosen['nidn']; ?>"
                                     required
                                   />
                                 </div>
@@ -102,6 +107,7 @@
                                     class="form-control"
                                     id="jenis_kelamin"
                                     name="jenis_kelamin"
+                                    value="<?= $dataDosen['jenis_kelamin']; ?>"
                                     required
                                   />
                                 </div>
@@ -114,6 +120,7 @@
                                     class="form-control"
                                     id="tempat_lahir"
                                     name="tempat_lahir"
+                                    value="<?= $dataDosen['tempat_lahir']; ?>"
                                     required
                                   />
                                 </div>
@@ -127,7 +134,8 @@
                                     type="email"
                                     class="form-control"
                                     id="alamat_email"
-                                    name="alamat_email"
+                                    name="alamt_email"
+                                    value="<?= $dataDosen['alamat_email']; ?>"
                                     required
                                   />
                                 </div>
@@ -140,6 +148,7 @@
                                     class="form-control"
                                     id="no_hp"
                                     name="no_hp"
+                                    value="<?= $dataDosen['no_hp']; ?>"
                                     required
                                   />
                                 </div>
@@ -152,6 +161,7 @@
                                     class="form-control"
                                     id="alamat_kantor"
                                     name="alamat_kantor"
+                                    value="<?= $dataDosen['alamat_kantor']; ?>"
                                     required
                                   />
                                 </div>
@@ -164,6 +174,7 @@
                                     class="form-control"
                                     id="lulusan"
                                     name="lulusan"
+                                    value="<?= $dataDosen['lulusan']; ?>"
                                     required
                                   />
                                 </div>
@@ -176,6 +187,7 @@
                                     class="form-control"
                                     id="mata_kuliah"
                                     name="mata_kuliah"
+                                    value="<?= $dataDosen['mata_kuliah']; ?>"
                                     required
                                   />
                                 </div>
@@ -188,6 +200,7 @@
                                     class="form-control"
                                     id="tanggal_lahir"
                                     name="tanggal_lahir"
+                                    value="<?= $dataDosen['tanggal_lahir']; ?>"
                                     required
                                   />
                                 </div>
@@ -198,7 +211,7 @@
                                     name="submit"
                                     class="btn btn-blue btn-outline-light"
                                   >
-                                    Tambah
+                                    Ubah
                                   </button>
                                 </div>
                             </div>
