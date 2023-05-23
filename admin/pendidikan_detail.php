@@ -46,51 +46,32 @@
                             <table
                               class="table table-2 table-striped table-borderless"
                             >
+                              <thead>
+                                <tr>
+                                  <th>Perguruan Tinggi</th>
+                                  <th>Bidang Ilmu</th>
+                                  <th>Tahun Masuk</th>
+                                  <th>Tahun Lulus</th>
+                                  <th>Gelar Akademik</th>
+                                  <th>Jenjang</th>
+                                </tr>
+                              </thead>
                               <tbody>
                                 <tr>
-                                  <th width="20%">Jenjang Pendidikan</th>
-                                  <th>S1</th>
-                                  <th>S2</th>
-                                  <th>S3</th>
-                                </tr>
-                                <tr>
-                                  <th>Nama Perguruan Tinggi</th>
-                                  <td>Universitas Negeri Medan</td>
-                                  <td>Universitas Negeri Medan</td>
-                                  <td>Universitas Negeri Medan</td>
-                                </tr>
-                                <tr>
-                                  <th>Bidang Ilmu</th>
+                                  <td>Institute Negeri Medan</td>
                                   <td>Ilmu Komputer</td>
-                                  <td>Ilmu Komputer</td>
-                                  <td>Ilmu Komputer</td>
+                                  <td>2022</td>
+                                  <td>2024</td>
+                                  <td>S.Kom</td>
+                                  <td>S1</td>
                                 </tr>
                                 <tr>
-                                  <th>Tahun Masuk-Lulus</th>
-                                  <td>2010-2014</td>
-                                  <td>2010-2014</td>
-                                  <td>2010-2014</td>
-                                </tr>
-                                <tr>
-                                  <th>Judul Skripsi/Thesis/Disertasi</th>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                  <td>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quia, quam.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th>Nama Pembimbing/Promotor</th>
-                                  <td>Joen Doe</td>
-                                  <td>Joen Doe</td>
-                                  <td>Joen Doe</td>
+                                  <td>Universitas Arabic Center</td>
+                                  <td>Ilmu Komputer Syariah</td>
+                                  <td>2024</td>
+                                  <td>2025</td>
+                                  <td>M.Kom.S</td>
+                                  <td>S2</td>
                                 </tr>
                               </tbody>
                             </table>

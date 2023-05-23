@@ -17,9 +17,10 @@
           background-color: white;
           .profile-image-wrapper {
             img {
-              object-fit: cover;
+              object-fit: contain;
               margin: auto;
-              width: 14em;
+              width: 10em;
+              height: 10em;
             }
           }
         }

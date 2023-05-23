@@ -3,7 +3,9 @@
     .wrapper-body {
       background-color: #fff;
       .img {
-        object-fit: cover;
+        object-fit: contain;
+        width: 10em;
+        width: 10em;
         margin: auto;
       }
 

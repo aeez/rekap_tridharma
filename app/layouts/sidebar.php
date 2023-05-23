@@ -9,7 +9,7 @@
                     >
                   </li>
                   <li class="link-item mb-2">
-                    <a href="profil.php" class="nav-link px-3 py-2 rounded"
+                    <a href="dosen.php" class="nav-link px-3 py-2 rounded"
                       >Profil</a
                     >
                   </li>

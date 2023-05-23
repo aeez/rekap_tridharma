@@ -12,6 +12,7 @@
     <div class="wrapper-content">
       <!-- navbar -->
       <?php include ('../app/layouts/layout_admin/navbar_admin.php'); ?>
+
       <!-- navbar -->
 
       <!-- main  -->

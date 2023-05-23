@@ -110,9 +110,10 @@
   background-color: white;
 }
 .main-wrapper .main-content .container .profile-identity .profile-section .profile-image-wrapper img {
-  object-fit: cover;
+  object-fit: contain;
   margin: auto;
-  width: 14em;
+  width: 10em;
+  height: 10em;
 }
 .main-wrapper .main-content .container .profile-identity .identity-section {
   background-color: white;
@@ -130,15 +131,23 @@
   background-color: white;
 }
 
-.main-content .container .table-section .wrapper-table {
-  background-color: white;
+.profile-dosen .profile-wrapper .wrapper-body {
+  background-color: #fff;
+}
+.profile-dosen .profile-wrapper .wrapper-body img {
+  object-fit: contain;
+  margin: auto;
+  width: 14em;
+  height: 14em;
 }
 
 .profile-dosen .profile-wrapper .wrapper-body {
   background-color: #fff;
 }
 .profile-dosen .profile-wrapper .wrapper-body .img {
-  object-fit: cover;
+  object-fit: contain;
+  width: 10em;
+  width: 10em;
   margin: auto;
 }
 .profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper,

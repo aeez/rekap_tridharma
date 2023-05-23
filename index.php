@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
-
-    <?php include ('./app/layouts/link1.php'); ?>
+    <?php include ('./app/layouts/link.php'); ?>
   </head>
   <body>
     <div class="wrapper-content">
@@ -37,17 +36,17 @@
 
               <!-- profil -->
               <div
-                class="row profile-identity justify-content-center justify-content-lg-between mb-4"
+                class="row profile-identity justify-content-center justify-content-lg-around mb-4"
               >
                 <div class="col-11 col-lg-3 profile-section rounded-4 py-4">
                   <div
                     class="profile-image-wrapper d-flex justify-content-center"
                   >
-                    <img src="app/assets/img/profil.jfif" alt="Profile" />
+                    <img src="https://berita.99.co/wp-content/uploads/2022/06/memakai-topi.jpg" alt="Profile" />
                   </div>
                 </div>
                 <div
-                  class="col-11 col-lg-4 identity-section p-3 my-3 my-lg-0 rounded-4"
+                  class="col-11 col-lg-8 identity-section p-3 my-3 my-lg-0 rounded-4"
                 >
                   <div class="identity-wrapper">
                     <table class="table">
@@ -72,29 +71,6 @@
                     </table>
                   </div>
                 </div>
-
-                <!-- education -->
-                <div class="col-11 col-lg-4 education-section p-3 rounded-4">
-                  <div class="education-wrapper">
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td class="fw-bold">Nama Perguruan Tinggi</td>
-                          <td>Institut Negeri Medan</td>
-                        </tr>
-                        <tr>
-                          <td class="fw-bold">Bidang Ilmu</td>
-                          <td>Web Developer</td>
-                        </tr>
-                        <tr>
-                          <td class="fw-bold">Tahun Masuk-Lulus</td>
-                          <td>2020-2024</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <!-- education -->
               </div>
               <!-- profil -->
 
