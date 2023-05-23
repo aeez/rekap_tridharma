@@ -67,21 +67,17 @@ if (isset($_POST['submit'])) {
                       <div class="row ubah-dosen">
                         <div class="form-ubah">
                             <!-- form ubah start -->
-                          <form action="" method="POST">
+                          <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row justify-content-center">
                               <div class="col-lg-6">
                                 <input type="hidden" name="id_dosen" value="<?= $dataDosen['id_dosen']; ?>">
+                                <input type="hidden" name="gambarLama" value="<?= $dataDosen['gambar']; ?>">
                                 <div class="mb-3">
                                   <label for="gambar" class="form-label"
                                     >Gambar</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="gambar"
-                                    name="gambar"
-                                    required
-                                  />
+                                  ><br>
+                                  <img src="../app/img/<?= $dataDosen['gambar']; ?>" alt="" width="100" height="120" class="img-thumbnail mb-2">
+                                  <input type="file" class="form-control" id="gambar" name="gambar">
                                 </div>
                                 <div class="mb-3">
                                   <label for="nama" class="form-label"
@@ -105,6 +101,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="tempat_lahir"
                                     name="tempat_lahir"
+                                    value="<?= $dataDosen['tempat_lahir']; ?>"
                                     required
                                   />
                                 </div>
@@ -115,8 +112,9 @@ if (isset($_POST['submit'])) {
                                   <input
                                     type="date"
                                     class="form-control"
-                                    id="tanggal_lahir"
-                                    name="tanggal_lahir"
+                                    id="tgl_lahir"
+                                    name="tgl_lahir"
+                                    value="<?= $dataDosen['tgl_lahir']; ?>"
                                     required
                                   />
                                 </div>
@@ -142,6 +140,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="jabatan_fungsional"
                                     name="jabatan_fungsional"
+                                    value="<?= $dataDosen['jabatan_fungsional']; ?>"
                                     required
                                   />
                                 </div>
@@ -158,6 +157,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="nip"
                                     name="nip"
+                                    value="<?= $dataDosen['nip']; ?>"
                                     required
                                   />
                                 </div>
@@ -170,6 +170,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="nidn"
                                     name="nidn"
+                                    value="<?= $dataDosen['nidn']; ?>"
                                     required
                                   />
                                 </div>
@@ -180,8 +181,9 @@ if (isset($_POST['submit'])) {
                                   <input
                                     type="email"
                                     class="form-control"
-                                    id="alamat_email"
-                                    name="alamat_email"
+                                    id="email"
+                                    name="email"
+                                    value="<?= $dataDosen['email']; ?>"
                                     required
                                   />
                                 </div>
@@ -194,6 +196,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="no_hp"
                                     name="no_hp"
+                                    value="<?= $dataDosen['no_hp']; ?>"
                                     required
                                   />
                                 </div>
@@ -206,6 +209,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="alamat_kantor"
                                     name="alamat_kantor"
+                                    value="<?= $dataDosen['alamat_kantor']; ?>"
                                     required
                                   />
                                 </div>
@@ -219,11 +223,12 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="lulusan"
                                     name="lulusan"
+                                    value="<?= $dataDosen['lulusan']; ?>"
                                     required
                                   />
                                 </div>
 
-                                <div class="mb-3 mt-lg-0">
+                                <!-- <div class="mb-3 mt-lg-0">
                                   <label for="password" class="form-label"
                                     >Password</label
                                   >
@@ -234,7 +239,8 @@ if (isset($_POST['submit'])) {
                                     name="password"
                                     required
                                   />
-                                </div>
+                                </div> -->
+                                <input type="hidden" name="password" value="<?= $dataDosen['password']; ?>">
 
                               </div>
                               <div class="">

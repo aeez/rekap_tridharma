@@ -50,7 +50,7 @@ $detailDosen = detail($id);
                     <div class="wrapper-body rounded-4 p-4">
                       <div class="row align-items-center">
                         <div class="col-lg-3 text-center my-4 px-xl-0">
-                          <img src="../app/img/<?= $detailDosen['gambar']; ?>" alt="Profile" />
+                          <img src="../app/img/<?= $detailDosen['gambar']; ?>" class="mw-100" alt="Profile" />
                         </div>
                         <div class="col-lg-9 pt-lg-4">
                           <div class="table-responsive ps-lg-3 ps-xl-0">
@@ -120,10 +120,10 @@ $detailDosen = detail($id);
                       <div class="row button">
                         <div class="col-12 d-flex justify-content-end">
                           <div class="button-edit-wrapper me-2" style="width: 5em;">
-                            <a class="btn-blue btn w-100" style="background-color: #002743; color:white">Edit</a>
+                            <a href="dosen_ubah.php?id_dosen=<?= $detailDosen['id_dosen']; ?>" class="btn-blue btn w-100" style="background-color: #002743; color:white">Edit</a>
                           </div>
                           <div class="button-hapus-wrapper" style="width: 5em;">
-                            <a class="btn-blue btn w-100" style="border: 1px solid #002743;">Hapus</a>
+                            <a href="dosen_hapus.php?id_dosen=<?= $detailDosen['id_dosen']; ?>" class="btn-blue btn w-100" style="border: 1px solid #002743;" onclick="return confirm('Yakin?')">Hapus</a>
                           </div>
                         </div>
                       </div>

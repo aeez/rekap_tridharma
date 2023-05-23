@@ -118,9 +118,17 @@ function ubah($request)
     $alamat_kantor = htmlspecialchars($request['alamat_kantor']);
     $lulusan = htmlspecialchars($request['lulusan']);
     $password = password_hash($request['nidn'], PASSWORD_DEFAULT);
+    $gambarLama = htmlspecialchars($request['gambarLama']);
     $level = 'dosen';
 
+    if ($_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = upload();
+    }
+
     $query = "UPDATE tb_dosen SET
+            gambar = '$gambar',
             nama = '$nama',
             tempat_lahir = '$tempat_lahir',
             tgl_lahir = '$tgl_lahir',
@@ -128,12 +136,12 @@ function ubah($request)
             jabatan_fungsional = '$jabatan_fungsional',
             nip = '$nip',
             nidn = '$nidn',
-            alamat_email = '$email',
+            email = '$email',
             no_hp = '$no_hp',
             alamat_kantor = '$alamat_kantor',
             lulusan = '$lulusan',
             password = '$password',
-            level = '$level',
+            level = '$level'
             WHERE id_dosen = $id_dosen
             ";
 
