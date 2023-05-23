@@ -121,16 +121,15 @@ if (isset($_POST['submit'])) {
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="jenisKelamin" class="form-label"
+                                  <label for="jenis_kelamin" class="form-label"
                                     >Jenis Kelamin</label
                                   >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="jenis_kelamin"
-                                    name="jenis_kelamin"
-                                    required
-                                  />
+                                    <select class="form-select" name="jenis_kelamin" id="jenis_kelamin" aria-label="Default select example">
+                                    <option selected>-- Pilih --</option>
+                                    <option value="1">Laki-Laki</option>
+                                    <option value="2">Perempuan</option>
+
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                   <label
