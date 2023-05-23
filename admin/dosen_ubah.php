@@ -72,6 +72,18 @@ if (isset($_POST['submit'])) {
                               <div class="col-lg-6">
                                 <input type="hidden" name="id_dosen" value="<?= $dataDosen['id_dosen']; ?>">
                                 <div class="mb-3">
+                                  <label for="gambar" class="form-label"
+                                    >Gambar</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="gambar"
+                                    name="gambar"
+                                    required
+                                  />
+                                </div>
+                                <div class="mb-3">
                                   <label for="nama" class="form-label"
                                     >Nama</label
                                   >
@@ -134,6 +146,10 @@ if (isset($_POST['submit'])) {
                                     required
                                   />
                                 </div>
+
+
+                              </div>
+                              <div class="col-lg-6">
                                 <div class="mb-3">
                                   <label for="nip" class="form-label"
                                     >NIP</label
@@ -146,9 +162,6 @@ if (isset($_POST['submit'])) {
                                     required
                                   />
                                 </div>
-
-                              </div>
-                              <div class="col-lg-6">
                                 <div class="mb-3">
                                   <label for="nidn" class="form-label"
                                     >NIDN</label
