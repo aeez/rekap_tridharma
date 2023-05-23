@@ -1,3 +1,25 @@
+<?php
+include('../config/functions/functionDosen.php');
+if (isset($_POST['submit'])) {
+
+    if (tambah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil ditambah!');
+                document.location.href = 'dosen_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal ditambah!');
+                document.location.href = 'dosen_tambah.php';
+            </script>
+        ";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,7 +62,7 @@
                       <div class="row tambah-dosen">
                         <div class="form-tambah">
                             <!-- form tambah start -->
-                          <form action="" method="POST">
+                          <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row justify-content-center">
                               <div class="col-lg-6">
                                 <div class="mb-3">
@@ -74,8 +96,8 @@
                                   <input
                                     type="date"
                                     class="form-control"
-                                    id="tanggal_lahir"
-                                    name="tanggal_lahir"
+                                    id="tgl_lahir"
+                                    name="tgl_lahir"
                                     required
                                   />
                                 </div>
@@ -139,8 +161,8 @@
                                   <input
                                     type="email"
                                     class="form-control"
-                                    id="alamat_email"
-                                    name="alamat_email"
+                                    id="email"
+                                    name="email"
                                     required
                                   />
                                 </div>
@@ -181,7 +203,7 @@
                                   />
                                 </div>
 
-                                <div class="mb-3 mb-lg-0">
+                                <!-- <div class="mb-3 mb-lg-0">
                                   <label for="password" class="form-label"
                                     >Password</label
                                   >
@@ -192,7 +214,8 @@
                                     name="password"
                                     required
                                   />
-                                </div>
+                                </div> -->
+                                <!-- <input type="hidden" name="password" > -->
 
                               </div>
                               <div class="">

@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionDosen.php');
+
+$id = $_GET['id_dosen'];
+
+$detailDosen = detail($id);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,7 +50,7 @@
                     <div class="wrapper-body rounded-4 p-4">
                       <div class="row align-items-center">
                         <div class="col-lg-3 text-center my-4 px-xl-0">
-                          <img src="../app/assets/img/profil.jfif" alt="Profile" />
+                          <img src="../app/img/<?= $detailDosen['gambar']; ?>" alt="Profile" />
                         </div>
                         <div class="col-lg-9 pt-lg-4">
                           <div class="table-responsive ps-lg-3 ps-xl-0">
@@ -52,27 +60,27 @@
                               <tbody>
                                 <tr>
                                   <th width="30%">NIP</th>
-                                  <td>12345678</td>
+                                  <td><?= $detailDosen['nip']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Nama</th>
-                                  <td>John Doe</td>
+                                  <td><?= $detailDosen['nama']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Fungsional Jabatan</th>
-                                  <td>Wakil Rektor</td>
+                                  <td><?= $detailDosen['jabatan_fungsional']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>NIDN</th>
-                                  <td>12345678</td>
+                                  <td><?= $detailDosen['nidn']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Jenis Kelamin</th>
-                                  <td>Laki-Laki</td>
+                                  <td><?= $detailDosen['jenis_kelamin']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Tempat, Tanggal lahir</th>
-                                  <td>Medan</td>
+                                  <td><?= $detailDosen['tempat_lahir']; ?>, <?= date('d F Y', strtotime($detailDosen['tgl_lahir'])); ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -89,27 +97,19 @@
                               <tbody>
                                 <tr>
                                   <th width="20%">Alamat Email</th>
-                                  <td>JohnDoe@unimed.ac.id</td>
+                                  <td><?= $detailDosen['email']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Nomor Telepon/Hp</th>
-                                  <td>+62</td>
+                                  <td><?= $detailDosen['no_hp']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Alamat Kantor</th>
-                                  <td>Medan</td>
+                                  <td><?= $detailDosen['alamat_kantor']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Lulusan yang telah dihasilkan</th>
-                                  <td>Sarjana</td>
-                                </tr>
-                                <tr>
-                                  <th>Mata Kuliah yang diampu</th>
-                                  <td>Rekayasa Perangkat Lunak</td>
-                                </tr>
-                                <tr>
-                                  <th>Tempat, Tanggal lahir</th>
-                                  <td>Medan</td>
+                                  <td><?= $detailDosen['lulusan']; ?> Sarjana</td>
                                 </tr>
                               </tbody>
                             </table>

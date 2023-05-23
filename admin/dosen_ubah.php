@@ -1,3 +1,30 @@
+<?php
+include('../config/functions/functionDosen.php');
+
+$id = $_GET['id_dosen'];
+
+$dataDosen = query("SELECT * FROM tb_dosen WHERE id_dosen = $id")[0];
+
+if (isset($_POST['submit'])) {
+
+    if (ubah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil diubah!');
+                document.location.href = 'dosen_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal diubah!');
+                document.location.href = 'dosen_ubah.php';
+            </script>
+        ";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,6 +80,7 @@
                                     class="form-control"
                                     id="nama"
                                     name="nama"
+                                    value="<?= $dataDosen['nama']; ?>"
                                     required
                                   />
                                 </div>
