@@ -52,7 +52,7 @@
                         <table class="table table-striped table-borderless">
                           <tbody>
                             <tr>
-                              <th>jenis Penghargaan</th>
+                              <th>Jenis Penghargaan</th>
                               <td>Medali Emas</td>
                             </tr>
                             <tr>

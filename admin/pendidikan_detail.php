@@ -54,6 +54,7 @@
                                   <th>Tahun Lulus</th>
                                   <th>Gelar Akademik</th>
                                   <th>Jenjang</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -64,6 +65,27 @@
                                   <td>2024</td>
                                   <td>S.Kom</td>
                                   <td>S1</td>
+                                  <td class="d-flex">
+                                    <div
+                                      class="button-edit-wrapper me-2"
+                                      style="width: 5em"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="btn-blue btn w-100"
+                                        style="background-color: #002743; color: white"
+                                        >Edit</a
+                                      >
+                                    </div>
+                                    <div class="button-hapus-wrapper" style="width: 5em">
+                                      <a
+                                        href="#"
+                                        class="btn w-100"
+                                        style="border: 1px solid #002743"
+                                        >Hapus</a
+                                      >
+                                    </div>
+                                  </td>
                                 </tr>
                                 <tr>
                                   <td>Universitas Arabic Center</td>
@@ -72,6 +94,26 @@
                                   <td>2025</td>
                                   <td>M.Kom.S</td>
                                   <td>S2</td>
+                                  <td class="d-flex">
+                                    <div
+                                      class="button-edit-wrapper me-2"
+                                      style="width: 5em"
+                                    >
+                                      <a
+                                        href="#"
+                                        class="btn-blue btn w-100"
+                                        style="background-color: #002743; color: white"
+                                        >Edit</a
+                                      >
+                                    </div>
+                                    <div class="button-hapus-wrapper" style="width: 5em">
+                                      <a
+                                        href="#"
+                                        class="btn w-100"
+                                        style="border: 1px solid #002743"
+                                        >Hapus</a
+                                      >
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -81,25 +123,7 @@
 
                       <div class="row button">
                         <div class="col-12 d-flex justify-content-end">
-                          <div
-                            class="button-edit-wrapper me-2"
-                            style="width: 5em"
-                          >
-                            <a
-                              href="#"
-                              class="btn-blue btn w-100"
-                              style="background-color: #002743; color: white"
-                              >Edit</a
-                            >
-                          </div>
-                          <div class="button-hapus-wrapper" style="width: 5em">
-                            <a
-                              href="#"
-                              class="btn w-100"
-                              style="border: 1px solid #002743"
-                              >Hapus</a
-                            >
-                          </div>
+                          
                         </div>
                       </div>
                     </div>

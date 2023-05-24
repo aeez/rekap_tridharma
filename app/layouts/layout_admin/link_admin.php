@@ -20,4 +20,4 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../app/assets/css/style.css" />
+    <link rel="stylesheet" href="../app/assets/css/main.css" />
