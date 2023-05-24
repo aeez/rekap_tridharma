@@ -70,6 +70,7 @@
                           <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
+                                <!-- <input type="hidden" name="id_pendidikan" value=""> -->
                                 <div class="mb-3">
                                   <label for="perguruan_tinggi" class="form-label"
                                     >Perguruan Tinggi</label
