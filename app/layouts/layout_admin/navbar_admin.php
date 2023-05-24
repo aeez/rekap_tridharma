@@ -41,7 +41,7 @@
                 <ul class="dropdown-menu dropdown-menu-light">
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <button class="dropdown-item" href="#">Log Out</button>
+                    <button class="dropdown-item"><a href="logout.php" class="btn">Log Out</a></button>
                   </li>
                 </ul>
               </div>

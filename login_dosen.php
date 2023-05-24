@@ -1,3 +1,56 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+if (isset($_SESSION['login']) && (isset($_SESSION['level']) == 'dosen') ) {
+    header('location: index.php');
+} 
+
+if (isset($_POST['login'])) {
+
+    $nidn = $_POST['nidn'];
+    $password = $_POST['password'];
+
+    $dosenInfo = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE nidn = '$nidn'");
+    // $siswaInfo = mysqli_query($conn, "SELECT * FROM siswa WHERE username = '$username'");
+
+    if (mysqli_num_rows($dosenInfo) === 0) {
+        $error4 = true;
+    } //else if (mysqli_num_rows($siswaInfo) === 0) {
+        //$error4 = true;
+    //}
+
+    if (mysqli_num_rows($dosenInfo) === 1) {
+
+        $row = mysqli_fetch_assoc($dosenInfo);
+
+        if (password_verify($password, $row['password'])) {
+            // session set
+            $_SESSION['login'] = true;
+            $_SESSION['nama'] = $row['nama'];
+            $_SESSION['level'] = $row['level'];
+            header('location: index.php');
+            exit;
+        }
+
+        $error = true;
+    } //else if (mysqli_num_rows($siswaInfo) === 1) {
+
+    //     $row = mysqli_fetch_assoc($siswaInfo);
+
+    //     if (password_verify($password, $row['password'])) {
+    //         // sessin set
+    //         $_SESSION['login'] = true;
+    //         $_SESSION['nama'] = $row['nama_siswa'];
+    //         $_SESSION['level'] = $row['level'];
+    //         header('location: home.php');
+    //         exit;
+    //     }
+
+    //     $error = true;
+    // }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +79,7 @@
                           <div class="d-flex align-items-center">
                             <div class="logo me-3">
                               <img
-                                src="app/assets/img/Logo.png"
+                                src="./app/assets/img/Logo.png"
                                 class="img-fluid"
                                 alt="logo UNIMED"
                               />
@@ -44,12 +97,26 @@
                       </div>
                     </div>
                     <div class="main-login-form mt-4">
-                      <form>
+                      
+                      <?php if (isset($error)) { ?>
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                              Gagal, mohon periksa lagi username dan password Anda!
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      <?php } else if (isset($error4)) { ?>
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                              Gagal, Anda belum terdaftar!
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      <?php }  ?>
+
+                      <form action="" method="POST">
                         <div class="mb-4">
                           <input
                             type="text"
                             class="form-control"
                             placeholder="NIDN"
+                            name="nidn"
                           />
                         </div>
                         <div class="mb-4">
@@ -57,12 +124,14 @@
                             type="password"
                             class="form-control"
                             placeholder="Password"
+                            name="password"
                           />
                         </div>
                         <div class="text-center">
                           <button
                             type="submit"
                             class="btn text-white px-4 w-100 rounded-3"
+                            name="login"
                           >
                             Masuk
                           </button>
