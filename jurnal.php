@@ -51,7 +51,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_jurnal WHERE id_dosen = $_SESSI
               <div class="row table-journal-section justify-content-center">
                  <?php while ($data = mysqli_fetch_array($result2)) { ?>
                 <div
-                  class="col-11 col-lg-12 journal-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 journal-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-journal mb-3">
                     <div class="col-lg-12">

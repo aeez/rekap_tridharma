@@ -53,7 +53,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_hki INNER JOIN tb_dosen ON tb_hk
                     </div>
                   </div>
 
-                  <div class="row table-section">
+                  <div class="row table-section-hki">
                     <div class="col-lg-12">
                       <div class="table-responsive">
                         <table class="table table-striped table-borderless">
@@ -100,7 +100,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_hki INNER JOIN tb_dosen ON tb_hk
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
                           href="hki_hapus.php?id_hki=<?= $data['id_hki']; ?>"
-                          class="btn-blue btn w-100"
+                          class="btn w-100"
                           style="border: 1px solid #002743"
                           onclick="return confirm('Yakin?')"
                           >Hapus</a

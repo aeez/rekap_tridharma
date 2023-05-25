@@ -34,7 +34,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_buku WHERE id_dosen = $_SESSION
 
           <!-- main content -->
           <section class="main-content w-100 bg-light">
-            <div class="container py-4">
+            <div class="container py-4 ">
               <!-- book -->
               <div class="row book-title justify-content-center mb-2 mb-lg-3">
                 <div class="col-11 col-lg-12">
@@ -49,7 +49,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_buku WHERE id_dosen = $_SESSION
 
               <div class="row table-book-section justify-content-center">
                 <?php while ($data = mysqli_fetch_array($result2)) { ?>
-                <div class="col-11 col-lg-12 book-table-wrapper py-3 rounded-4">
+                <div class="col-11 col-lg-12 book-table-wrapper py-3 rounded-4 mb-4">
                   <div class="row heading-book mb-3">
                     <div class="col-lg-12">
                       <h4 class="fw-bold">Buku</h4>

@@ -63,6 +63,102 @@
     .aside-sidebar.active {
       left: 0;
     }
+
+    .table-book-section {
+      .table-section {
+        .table-responsive {
+          .table {
+            tr {
+              th {
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .table-journal-section {
+      .table-section {
+        .table-responsive {
+          .table {
+            tr {
+              th {
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+      .table-section-makalah {
+        .table-responsive {
+          .table {
+            th {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+      .table-section-hki {
+        .table-responsive {
+          .table {
+            th {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+      .table-section-kebijakan {
+        .table-responsive {
+          .table {
+            th {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+      .table-penghargaan-section {
+        .table-responsive {
+          .table {
+            th {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+      .container {
+        .table-section-penghargaan {
+          .penghargaan-table-wrapper {
+            background-color: white;
+
+            .table-section {
+              .table-responsive {
+                .table {
+                  th {
+                    width: 50%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .main-content {

@@ -1,8 +1,18 @@
 .main-content {
   .container {
-    .table-penghargaan-section {
+    .table-section-penghargaan {
       .penghargaan-table-wrapper {
         background-color: white;
+
+        .table-section {
+          .table-responsive {
+            .table {
+              th {
+                width: 30%;
+              }
+            }
+          }
+        }
       }
     }
   }

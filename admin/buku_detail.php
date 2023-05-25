@@ -59,7 +59,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_buku INNER JOIN tb_dosen ON tb_b
                         <table class="table table-striped table-borderless">
                           <tbody>
                             <tr>
-                              <th>Judul</th>
+                              <th wid>Judul</th>
                               <td><?= $data['judul_buku']; ?></td>
 
                             </tr>

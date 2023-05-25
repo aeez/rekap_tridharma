@@ -47,7 +47,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_penghargaan WHERE id_dosen = $_
                 </div>
               </div>
 
-              <div class="row table-penghargaan-section justify-content-center">
+              <div class="row table-section-penghargaan justify-content-center">
                  <?php while ($data = mysqli_fetch_array($result2)) { ?>
                 <div
                   class="col-11 col-lg-12 penghargaan-table-wrapper py-3 rounded-4 mb-4"

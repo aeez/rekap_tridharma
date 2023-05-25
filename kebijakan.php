@@ -60,7 +60,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_kebijakan WHERE id_dosen = $_SE
                     </div>
                   </div>
 
-                  <div class="row table-section">
+                  <div class="row table-section-kebijakan">
                     <div class="col-lg-12">
                       <div class="table-responsive">
                         <table class="table table-striped table-borderless">

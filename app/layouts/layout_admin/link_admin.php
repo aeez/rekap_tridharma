@@ -24,5 +24,5 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../app/assets/css/style.css" />
+    <link rel="stylesheet" href="../app/assets/css/main.css" />
 

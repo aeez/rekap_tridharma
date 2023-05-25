@@ -55,7 +55,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_penghargaan INNER JOIN tb_dosen 
                     </div>
                   </div>
 
-                  <div class="row table-section">
+                  <div class="row table-section-penghargaan">
                     <div class="col-lg-12">
                       <div class="table-responsive">
                         <table class="table table-striped table-borderless">
