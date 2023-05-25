@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
                       <div class="row tambah-pendidikan">
                         <div class="form-tambah">
                             <!-- form tambah start -->
-                          <form action="" method="POST" enctype="multipart/form-data">
+                          <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
                                 <div class="mb-3">

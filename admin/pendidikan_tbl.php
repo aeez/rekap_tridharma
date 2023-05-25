@@ -67,7 +67,7 @@ $pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendi
                                 <td><?= $dataPend['nidn']; ?></td>
                                 <td><?= $dataPend['nama']; ?></td>
                                 <td>
-                                  <a href="pendidikan_detail.php?id_pendidikan=<?= $dataPend['id_dosen']; ?>" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php?id_dosen=<?= $dataPend['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                               <?php endforeach; ?>

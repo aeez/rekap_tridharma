@@ -1,28 +1,28 @@
 <?php
-// include('../config/functions/functionDosen.php');
+include('../config/functions/functionPendidikan.php');
 
-// $id = $_GET['id_dosen'];
+$id = $_GET['id_pendidikan'];
 
-// $dataDosen = query("SELECT * FROM tb_dosen WHERE id_dosen = $id")[0];
+$dataPend = query("SELECT * FROM tb_pendidikan WHERE id_pendidikan = $id")[0];
 
-// if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-//     if (ubah($_POST) > 0) {
-//         echo "
-//             <script>
-//                 alert('Data berhasil diubah!');
-//                 document.location.href = 'dosen_tbl.php';
-//             </script>
-//         ";
-//     } else {
-//         echo "
-//             <script>
-//                 alert('Data gagal diubah!');
-//                 document.location.href = 'dosen_ubah.php';
-//             </script>
-//         ";
-//     }
-// }
+    if (ubah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil diubah!');
+                document.location.href = 'pendidikan_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal diubah!');
+                document.location.href = 'pendidikan_ubah.php';
+            </script>
+        ";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -67,10 +67,10 @@
                       <div class="row ubah-pendidikan">
                         <div class="form-ubah">
                             <!-- form ubah start -->
-                          <form action="" method="POST" enctype="multipart/form-data">
+                          <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
-                                <!-- <input type="hidden" name="id_pendidikan" value=""> -->
+                                <input type="hidden" name="id_pendidikan" value="<?= $dataPend['id_pendidikan']; ?>">
                                 <div class="mb-3">
                                   <label for="perguruan_tinggi" class="form-label"
                                     >Perguruan Tinggi</label
@@ -80,6 +80,7 @@
                                     class="form-control"
                                     id="perguruan_tinggi"
                                     name="perguruan_tinggi"
+                                    value="<?= $dataPend['perguruan_tinggi']; ?>"
                                     required
                                   />
                                 </div>
@@ -92,6 +93,7 @@
                                     class="form-control"
                                     id="bidang_ilmu"
                                     name="bidang_ilmu"
+                                    value="<?= $dataPend['bidang_ilmu']; ?>"
                                     required
                                   />
                                 </div>
@@ -104,6 +106,7 @@
                                     class="form-control"
                                     id="tahun_masuk"
                                     name="tahun_masuk"
+                                    value="<?= $dataPend['tahun_masuk']; ?>"
                                     required
                                   />
                                 </div>
@@ -116,6 +119,7 @@
                                     class="form-control"
                                     id="tahun_lulus"
                                     name="tahun_lulus"
+                                    value="<?= $dataPend['tahun_lulus']; ?>"
                                     required
                                   />
                                 </div>
@@ -128,6 +132,7 @@
                                     class="form-control"
                                     id="gelar_akademik"
                                     name="gelar_akademik"
+                                    value="<?= $dataPend['gelar_akademik']; ?>"
                                     required
                                   />
                                 </div>
@@ -137,14 +142,13 @@
                                   >
                                   <select class="form-select" name="jenjang" id="jenjang" aria-label="Default select example">
                                     <option selected>-- Pilih --</option>
-                                    <option value="1">S1</option>
-                                    <option value="2">S2</option>
-                                    <option value="2">S3</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
 
                                     </select>
                                 </div>
-
-
+                                <input type="hidden" name="id_dosen" value="<?= $dataPend['id_dosen']; ?>">
                               </div>
                               <div class="">
                                   <button

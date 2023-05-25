@@ -81,7 +81,7 @@ function hapus($id)
 {
     global $conn;
 
-    mysqli_query($conn, "DELETE FROM tb_pendidikan WHERE id_dosen = $id");
+    mysqli_query($conn, "DELETE FROM tb_pendidikan WHERE id_pendidikan = $id");
 
     return mysqli_affected_rows($conn);
 }

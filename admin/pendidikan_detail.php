@@ -1,3 +1,12 @@
+<?php
+include('../config/functions/functionPendidikan.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendidikan.id_dosen=tb_dosen.id_dosen WHERE tb_pendidikan.id_dosen = $id");
+// $result = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendidikan.id_dosen=tb_dosen.id_dosen ");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,20 +67,21 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                <?php while ($data = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                  <td>Institute Negeri Medan</td>
-                                  <td>Ilmu Komputer</td>
-                                  <td>2022</td>
-                                  <td>2024</td>
-                                  <td>S.Kom</td>
-                                  <td>S1</td>
+                                  <td><?= $data['perguruan_tinggi']; ?></td>
+                                  <td><?= $data['bidang_ilmu']; ?></td>
+                                  <td><?= $data['tahun_masuk']; ?></td>
+                                  <td><?= $data['tahun_lulus']; ?></td>
+                                  <td><?= $data['gelar_akademik']; ?></td>
+                                  <td><?= $data['jenjang']; ?></td>
                                   <td class="d-flex">
                                     <div
                                       class="button-edit-wrapper me-2"
                                       style="width: 5em"
                                     >
                                       <a
-                                        href="#"
+                                        href="pendidikan_ubah.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
                                         class="btn-blue btn w-100"
                                         style="background-color: #002743; color: white"
                                         >Edit</a
@@ -79,42 +89,17 @@
                                     </div>
                                     <div class="button-hapus-wrapper" style="width: 5em">
                                       <a
-                                        href="#"
+                                        href="pendidikan_hapus.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
                                         class="btn w-100"
                                         style="border: 1px solid #002743"
+                                        onclick="return confirm('Yakin?')"
                                         >Hapus</a
                                       >
                                     </div>
                                   </td>
                                 </tr>
-                                <tr>
-                                  <td>Universitas Arabic Center</td>
-                                  <td>Ilmu Komputer Syariah</td>
-                                  <td>2024</td>
-                                  <td>2025</td>
-                                  <td>M.Kom.S</td>
-                                  <td>S2</td>
-                                  <td class="d-flex">
-                                    <div
-                                      class="button-edit-wrapper me-2"
-                                      style="width: 5em"
-                                    >
-                                      <a
-                                        href="#"
-                                        class="btn-blue btn w-100"
-                                        style="background-color: #002743; color: white"
-                                        >Edit</a
-                                      >
-                                    </div>
-                                    <div class="button-hapus-wrapper" style="width: 5em">
-                                      <a
-                                        href="#"
-                                        class="btn w-100"
-                                        style="border: 1px solid #002743"
-                                        >Hapus</a
-                                      >
-                                  </td>
-                                </tr>
+                                <?php } ?>
+                               
                               </tbody>
                             </table>
                           </div>
