@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionPemakalah.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_pemakalah INNER JOIN tb_dosen ON tb_pemakalah.id_dosen=tb_dosen.id_dosen WHERE tb_pemakalah.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,8 +45,9 @@
               </div>
 
               <div class="row table-makalah-section justify-content-center">
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
                 <div
-                  class="col-11 col-lg-12 makalah-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 makalah-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-makalah mb-3">
                     <div class="col-lg-12">
@@ -53,23 +62,21 @@
                           <tbody>
                             <tr>
                               <th>Nama Pertemuan Ilmiah/Seminar</th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['nama_seminar']; ?></td>
                             </tr>
                             <tr>
                               <th>Judul Artikel Ilmiah</th>
-                              <td>Bokashi adalah pupuk terbaik</td>
+                              <td><?= $data['judul_artikel_ilmiah']; ?></td>
                             </tr>
                             <tr>
                               <th>Waktu dan Tempat</th>
                               <td>
-                                <span>13.00</span>, <span>Ruangan Seminar</span>
+                                <span><?= $data['waktu']; ?></span>, <span><?= $data['tempat']; ?></span>
                               </td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -81,7 +88,7 @@
                     <div class="col-12 d-flex justify-content-end">
                       <div class="button-edit-wrapper me-2" style="width: 5em">
                         <a
-                          href="#"
+                          href="makalah_ubah.php?id_pemakalah=<?= $data['id_pemakalah']; ?>"
                           class="btn-blue btn w-100"
                           style="background-color: #002743; color: white"
                           >Edit</a
@@ -89,7 +96,7 @@
                       </div>
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
-                          href="#"
+                          href="makalah_hapus.php?id_pemakalah=<?= $data['id_pemakalah']; ?>"
                           class="btn w-100"
                           style="border: 1px solid #002743"
                           >Hapus</a
@@ -98,7 +105,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                    <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

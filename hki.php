@@ -53,7 +53,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_hki WHERE id_dosen = $_SESSION[
 
               <div class="row table-haki-section justify-content-center">
               <?php while ($data = mysqli_fetch_array($result2)) { ?>
-              <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4">
+              <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4 mb-4">
                   <div class="row heading-haki mb-3">
                     <div class="col-lg-12">
                       <h5 class="fw-bold">HKI</h5>

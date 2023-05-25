@@ -74,7 +74,7 @@ $result2 = mysqli_query($conn, "SELECT * FROM tb_pengabdian WHERE id_dosen = $_S
                                 </tr>
                                 <tr>
                                   <th class="ps-4">2. Jumlah (Juta Rp.)</th>
-                                  <td><?= $data['nominal_dana']; ?></td>
+                                  <td>RP.<?= number_format($data["nominal_dana"], 0, ".", "."); ?>,-</td>
                                 </tr>
                                 <tr>
                                   <th>Link Google Drive</th>

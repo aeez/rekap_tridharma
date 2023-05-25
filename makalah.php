@@ -1,10 +1,21 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_Pemakalah WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
-    
+
     <?php include ('./app/layouts/link.php'); ?>
 
   </head>
@@ -39,8 +50,9 @@
               </div>
 
               <div class="row table-makalah-section justify-content-center">
+                <?php while ($data = mysqli_fetch_array($result2)) { ?>
                 <div
-                  class="col-11 col-lg-12 makalah-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 makalah-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-makalah mb-3">
                     <div class="col-lg-12">
@@ -55,23 +67,21 @@
                           <tbody>
                             <tr>
                               <th>Nama Pertemuan Ilmiah/Seminar</th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['nama_seminar']; ?></td>
                             </tr>
                             <tr>
                               <th>Judul Artikel Ilmiah</th>
-                              <td>Bokashi adalah pupuk terbaik</td>
+                              <td><?= $data['judul_artikel_ilmiah']; ?></td>
                             </tr>
                             <tr>
                               <th>Waktu dan Tempat</th>
                               <td>
-                                <span>13.00</span> WIB, <span>Ruangan Seminar</span>
+                                <span><?= $data['waktu']; ?></span> WIB, <span><?= $data['tempat']; ?></span>
                               </td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -79,7 +89,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                    <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>
