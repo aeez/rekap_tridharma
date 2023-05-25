@@ -38,7 +38,19 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Luaran Hasil</a>
+                          <div class="dropdown">
+                            <button class="btn btn-blue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Tambah Luaran Hasil
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="buku_tambah.php">Buku</a></li>
+                              <li><a class="dropdown-item" href="jurnal_tambah.php">Jurnal</a></li>
+                              <li><a class="dropdown-item" href="makalah_tambah.php">Pemakalah Seminal Ilmiah</a></li>
+                              <li><a class="dropdown-item" href="hki_tambah.php">HKI</a></li>
+                              <li><a class="dropdown-item" href="kebijakan_tambah.php">Merumuskan Kebijakan Publik</a></li>
+                              <li><a class="dropdown-item" href="penghargaan_tambah.php">Penghargaan Dalam</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
