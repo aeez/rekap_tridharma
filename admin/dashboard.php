@@ -1,3 +1,8 @@
+<?php
+include('../config/functions/functionDosen.php');
+$jumlahDosen = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_dosen"));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +21,7 @@
       <!-- navbar -->
 
       <!-- main  -->
-      <main>  
+      <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -31,7 +36,7 @@
                   <h3 class="fw-bold">Selamat Datang, Mimin</h3>
                   <p class="m-0">
                     Sistem Informasi Tridharma Universitas Negeri Medan
-                  </p>  
+                  </p>
                 </div>
               </div>
 
@@ -42,7 +47,7 @@
                     <div class="row beranda-item">
                       <div class="col-lg-12 beranda-item-wrapper rounded-4 py-3">
                         <span class="fs-5">Jumlah Dosen</span>
-                        <p class="fs-4 fw-bold m-0">5</p>
+                        <p class="fs-4 fw-bold m-0"><?= $jumlahDosen; ?></p>
                       </div>
                     </div>
                   </div>
