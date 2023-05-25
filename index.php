@@ -2,7 +2,7 @@
 include('./config/functions/dosen/functionAuth.php');
 
 if (!isset($_SESSION['login'])) {
-  header('location: auth_login.php');
+  header('location: login_dosen.php');
 }
 
 if ($_SESSION['level'] == 'customer') {
@@ -174,10 +174,10 @@ $dataDosen = mysqli_fetch_array($result);
       <!-- footer -->
       <?php include ('./app/layouts/footer.php'); ?>
       <!-- footer -->
-      
+
       <!-- main  -->
     </div>
-    
+
     <!-- js -->
     <?php include ('./app/layouts/js.php'); ?>
     <!-- js -->

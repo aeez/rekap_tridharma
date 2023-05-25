@@ -47,13 +47,13 @@ $result = mysqli_query($conn, "SELECT * FROM tb_penelitian INNER JOIN tb_dosen O
                 <div class="col-lg-12">
                   <?php while ($data = mysqli_fetch_array($result)) { ?>
                   <div class="penelitian-wrapper">
-                    <div class="wrapper-body rounded-4 p-4">
+                    <div class="wrapper-body rounded-4 p-4 mb-4">
                       <div class="row align-items-center">
                         <div class="col-lg-12">
                           <div class="table-responsive">
                             <table class="table table-striped table-borderless">
                               <tbody>
-                                
+
                                 <tr>
                                   <th width="20%">Judul Penelitian</th>
                                   <td>
@@ -82,7 +82,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_penelitian INNER JOIN tb_dosen O
                                     <?= $data['link_file']; ?>
                                   </td>
                                 </tr>
-                                
+
                               </tbody>
                             </table>
                           </div>
