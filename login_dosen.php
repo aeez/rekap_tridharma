@@ -3,7 +3,9 @@ include('./config/functions/dosen/functionAuth.php');
 
 if (isset($_SESSION['login']) && (isset($_SESSION['level']) == 'dosen') ) {
     header('location: index.php');
-} 
+}
+
+
 
 if (isset($_POST['login'])) {
 
@@ -11,13 +13,10 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     $dosenInfo = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE nidn = '$nidn'");
-    // $siswaInfo = mysqli_query($conn, "SELECT * FROM siswa WHERE username = '$username'");
 
     if (mysqli_num_rows($dosenInfo) === 0) {
         $error4 = true;
-    } //else if (mysqli_num_rows($siswaInfo) === 0) {
-        //$error4 = true;
-    //}
+    } 
 
     if (mysqli_num_rows($dosenInfo) === 1) {
 
@@ -26,6 +25,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $row['password'])) {
             // session set
             $_SESSION['login'] = true;
+            $_SESSION['id_dosen'] = $row['id_dosen'];
             $_SESSION['nama'] = $row['nama'];
             $_SESSION['level'] = $row['level'];
             header('location: index.php');
@@ -33,21 +33,7 @@ if (isset($_POST['login'])) {
         }
 
         $error = true;
-    } //else if (mysqli_num_rows($siswaInfo) === 1) {
-
-    //     $row = mysqli_fetch_assoc($siswaInfo);
-
-    //     if (password_verify($password, $row['password'])) {
-    //         // sessin set
-    //         $_SESSION['login'] = true;
-    //         $_SESSION['nama'] = $row['nama_siswa'];
-    //         $_SESSION['level'] = $row['level'];
-    //         header('location: home.php');
-    //         exit;
-    //     }
-
-    //     $error = true;
-    // }
+    } 
 }
 ?>
 

@@ -1,24 +1,29 @@
 <?php
-// include('../config/functions/functionDosen.php');
-// if (isset($_POST['submit'])) {
+include('../config/functions/functionPendidikan.php');
 
-//     if (tambah($_POST) > 0) {
-//         echo "
-//             <script>
-//                 alert('Data berhasil ditambah!');
-//                 document.location.href = 'dosen_tbl.php';
-//             </script>
-//         ";
-//     } else {
-//         echo "
-//             <script>
-//                 alert('Data gagal ditambah!');
-//                 document.location.href = 'dosen_tambah.php';
-//             </script>
-//         ";
-//     }
-// }
-// ?>
+$result = mysqli_query($conn, "SELECT * FROM tb_dosen");
+
+if (isset($_POST['submit'])) {
+
+    if (tambah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil ditambah!');
+                document.location.href = 'pendidikan_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal ditambah!');
+                document.location.href = 'pendidikan_tambah.php';
+            </script>
+        ";
+    }
+}
+
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +56,7 @@
                 class="row welcome py-2 mb-4 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h2 class="fw-bold">Tambah Riwayat Pendidkan</h2>
+                  <h2 class="fw-bold">Tambah Riwayat Pendidikan</h2>
                 </div>
               </div>
               <!-- tambah Riwayat Pendidikan -->
@@ -131,10 +136,21 @@
                                   >
                                   <select class="form-select" name="jenjang" id="jenjang" aria-label="Default select example">
                                     <option selected>-- Pilih --</option>
-                                    <option value="1">S1</option>
-                                    <option value="2">S2</option>
-                                    <option value="2">S3</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
 
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="jenjang" class="form-label"
+                                    >Nama Dosen</label
+                                  >
+                                  <select class="form-select" name="id_dosen" id="id_dosen" aria-label="Default select example">
+                                    <option selected>-- Pilih --</option>
+                                    <?php while ($data = mysqli_fetch_array($result)) { ?>
+                                    <option value="<?= $data['id_dosen']; ?>"><?php echo $data['nama'];?></option>
+                                    <?php } ?>
                                     </select>
                                 </div>
 

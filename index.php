@@ -1,3 +1,11 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +35,7 @@
                 class="row welcome p-2 mb-2 mb-lg-3 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h3 class="fw-bold">Selamat Datang, John Doe</h3>
+                  <h3 class="fw-bold">Selamat Datang, <?= $dataDosen['nama']; ?></h3>
                   <p class="m-0">
                     Sistem Informasi Tridharma Universitas Negeri Medan
                   </p>
@@ -42,7 +50,7 @@
                   <div
                     class="profile-image-wrapper d-flex justify-content-center"
                   >
-                    <img src="https://berita.99.co/wp-content/uploads/2022/06/memakai-topi.jpg" alt="Profile" />
+                    <img src="./app/img/<?= $dataDosen['gambar']; ?>" alt="Profile" />
                   </div>
                 </div>
                 <div
@@ -53,19 +61,19 @@
                       <tbody>
                         <tr>
                           <td class="fw-bold">Nama</td>
-                          <td>John Doe</td>
+                          <td><?= $dataDosen['nama']; ?></td>
                         </tr>
                         <tr>
                           <td class="fw-bold">Fungsional Jabatan</td>
-                          <td>Wakil Rektor</td>
+                          <td><?= $dataDosen['jabatan_fungsional']; ?></td>
                         </tr>
                         <tr>
                           <td class="fw-bold">NIP</td>
-                          <td>12345678</td>
+                          <td><?= $dataDosen['nip']; ?></td>
                         </tr>
                         <tr>
                           <td class="fw-bold">NIDN</td>
-                          <td>12345678</td>
+                          <td><?= $dataDosen['nidn']; ?></td>
                         </tr>
                       </tbody>
                     </table>

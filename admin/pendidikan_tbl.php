@@ -1,3 +1,9 @@
+<?php
+include('../config/functions/functionPendidikan.php');
+$pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendidikan.id_dosen=tb_dosen.id_dosen");
+// $dosen = query("SELECT * FROM tb");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,7 +44,7 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Riwayat Pendidikan</a>
+                          <a href="pendidikan_tambah.php" class="btn btn-blue">Tambah Riwayat Pendidikan</a>
                         </div>
                       </div>
                     </div>
@@ -54,38 +60,18 @@
                               <th>Action</th>
                             </thead>
                             <tbody>
+                              <?php $no = 1; ?>
+                              <?php foreach ($pendidikan as $dataPend) : ?>
                               <tr>
-                                <td class="fw-bold">1</td>
-                                <td>12345678</td>
-                                <td>John Doe</td>
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataPend['nidn']; ?></td>
+                                <td><?= $dataPend['nama']; ?></td>
                                 <td>
-                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pendidikan_detail.php?id_pendidikan=<?= $dataPend['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td class="fw-bold">2</td>
-                                <td>13716163</td>
-                                <td>Jontor</td>
-                                <td>
-                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">3</td>
-                                <td>71289382</td>
-                                <td>Micho</td>
-                                <td>
-                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">4</td>
-                                <td>10237598</td>
-                                <td>Misel</td>
-                                <td>
-                                  <a href="pendidikan_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
+                              <?php endforeach; ?>
+                              
                             </tbody>
                           </table>
                         </div>

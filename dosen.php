@@ -1,3 +1,14 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_pendidikan WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +54,7 @@
                       <h5 class="wrapper-title fw-bold">1. Ringkasan Profil</h5>
                       <div class="row align-items-center">
                         <div class="col-lg-3 text-center my-4 px-xl-0">
-                          <img src="https://berita.99.co/wp-content/uploads/2022/06/memakai-topi.jpg"  alt="Profile" />
+                          <img src="./app/img/<?= $dataDosen['gambar']; ?>"  alt="Profile" />
                         </div>
                         <div class="col-lg-9 pt-lg-4">
                           <div class="table-responsive ps-lg-3 ps-xl-0">
@@ -53,27 +64,27 @@
                               <tbody>
                                 <tr>
                                   <th width="30%">NIP</th>
-                                  <td>12345678</td>
+                                  <td><?= $dataDosen['nip']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Nama</th>
-                                  <td>John Doe</td>
+                                  <td><?= $dataDosen['nama']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Fungsional Jabatan</th>
-                                  <td>Wakil Rektor</td>
+                                  <td><?= $dataDosen['jabatan_fungsional']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>NIDN</th>
-                                  <td>12345678</td>
+                                  <td><?= $dataDosen['nidn']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Jenis Kelamin</th>
-                                  <td>Laki-Laki</td>
+                                  <td><?= $dataDosen['jenis_kelamin']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Tempat, Tanggal lahir</th>
-                                  <td>Medan</td>
+                                  <td><?= $dataDosen['tempat_lahir']; ?>, <?= date('d F Y', strtotime($dataDosen['tgl_lahir'])); ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -89,28 +100,24 @@
                               <tbody>
                                 <tr>
                                   <th width="20%">Alamat Email</th>
-                                  <td>JohnDoe@unimed.ac.id</td>
+                                  <td><?= $dataDosen['email']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Nomor Telepon/Hp</th>
-                                  <td>+62</td>
+                                  <td><?= $dataDosen['no_hp']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Alamat Kantor</th>
-                                  <td>Medan</td>
+                                  <td><?= $dataDosen['alamat_kantor']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Lulusan yang telah dihasilkan</th>
-                                  <td>Sarjana</td>
+                                  <td><?= $dataDosen['lulusan']; ?> Sarjana</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                   <th>Mata Kuliah yang diampu</th>
                                   <td>Rekayasa Perangkat Lunak</td>
-                                </tr>
-                                <tr>
-                                  <th>Tempat, Tanggal lahir</th>
-                                  <td>Medan</td>
-                                </tr>
+                                </tr> -->
                               </tbody>
                             </table>
                           </div>
@@ -145,22 +152,16 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                <?php while ($data = mysqli_fetch_array($result2)) { ?>
                                 <tr>
-                                  <td>Institute Negeri Medan</td>
-                                  <td>Ilmu Komputer</td>
-                                  <td>2022</td>
-                                  <td>2024</td>
-                                  <td>S.Kom</td>
-                                  <td>S1</td>
+                                  <td><?= $data['perguruan_tinggi']; ?></td>
+                                  <td><?= $data['bidang_ilmu']; ?></td>
+                                  <td><?= $data['tahun_masuk']; ?></td>
+                                  <td><?= $data['tahun_lulus']; ?></td>
+                                  <td><?= $data['gelar_akademik']; ?></td>
+                                  <td><?= $data['jenjang']; ?></td>
                                 </tr>
-                                <tr>
-                                  <td>Universitas Arabic Center</td>
-                                  <td>Ilmu Komputer Syariah</td>
-                                  <td>2024</td>
-                                  <td>2025</td>
-                                  <td>M.Kom.S</td>
-                                  <td>S2</td>
-                                </tr>
+                                <?php } ?>
                               </tbody>
                             </table>
                           </div>
