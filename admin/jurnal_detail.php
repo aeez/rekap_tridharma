@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionJurnal.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_jurnal INNER JOIN tb_dosen ON tb_jurnal.id_dosen=tb_dosen.id_dosen WHERE tb_jurnal.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,8 +47,9 @@
               </div>
 
               <div class="row table-journal-section justify-content-center">
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
                 <div
-                  class="col-11 col-lg-12 journal-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 journal-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-journal mb-3">
                     <div class="col-lg-12">
@@ -56,24 +65,24 @@
                             <tr>
                               <th>Judul</th>
                               <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
+                                <?= $data['judul']; ?>
                               </td>
                             </tr>
                             <tr>
                               <th>Nama Jurnal</th>
-                              <td>Jurnal Bokashi</td>
+                              <td><?= $data['nama_jurnal']; ?></td>
                             </tr>
                             <tr>
                               <th>Vol/No/Tahun</th>
                               <td>
-                                <span>03</span>/<span>10</span>/<span
-                                  >2022</span
+                                <span><?= $data['volume']; ?></span>/<span><?= $data['no']; ?></span>/<span
+                                  ><?= $data['tahun']; ?></span
                                 >
                               </td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -85,7 +94,7 @@
                     <div class="col-12 d-flex justify-content-end">
                       <div class="button-edit-wrapper me-2" style="width: 5em">
                         <a
-                          href="#"
+                          href="jurnal_ubah.php?id_jurnal=<?= $data['id_jurnal']; ?>"
                           class="btn-blue btn w-100"
                           style="background-color: #002743; color: white"
                           >Edit</a
@@ -93,7 +102,7 @@
                       </div>
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
-                          href="#"
+                          href="jurnal_hapus.php?id_jurnal=<?= $data['id_jurnal']; ?>"
                           class=" btn w-100"
                           style="border: 1px solid #002743"
                           >Hapus</a
@@ -102,7 +111,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

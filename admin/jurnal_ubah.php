@@ -1,36 +1,36 @@
 <?php
 include('../config/functions/functionJurnal.php');
 
-$result = mysqli_query($conn, "SELECT * FROM tb_dosen");
+$id = $_GET['id_jurnal'];
+
+$dataJurnal = query("SELECT * FROM tb_jurnal WHERE id_jurnal = $id")[0];
 
 if (isset($_POST['submit'])) {
 
-    if (tambah($_POST) > 0) {
+    if (ubah($_POST) > 0) {
         echo "
             <script>
-                alert('Data berhasil ditambah!');
+                alert('Data berhasil diubah!');
                 document.location.href = 'luaran_tbl.php';
             </script>
         ";
     } else {
         echo "
             <script>
-                alert('Data gagal ditambah!');
-                document.location.href = 'jurnal_tambah.php';
+                alert('Data gagal diubah!');
+                document.location.href = 'jurnal_ubah.php';
             </script>
         ";
     }
 }
-
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TRIDHARMA</title>
+    <title>Ubah luaran | Tri Dharma</title>
 
     <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
@@ -56,20 +56,21 @@ if (isset($_POST['submit'])) {
                 class="row welcome py-2 mb-4 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h2 class="fw-bold">Tambah Jurnal</h2>
+                  <h2 class="fw-bold">Ubah luaran</h2>
                 </div>
               </div>
-              <!-- tambah Riwayat Pendidikan -->
+              <!-- ubah luaran -->
               <div class="row profile-dosen justify-content-center">
                 <div class="col-lg-12">
                   <div class="profile-wrapper">
                     <div class="wrapper-body rounded-4 p-4">
-                      <div class="row tambah-penelitian">
-                        <div class="form-tambah">
-                            <!-- form tambah start -->
+                      <div class="row ubah-luaran">
+                        <div class="form-ubah">
+                            <!-- form ubah start -->
                           <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
+                                <input type="hidden" name="id_jurnal" value="<?= $dataJurnal['id_jurnal']; ?>">
                                 <div class="mb-3">
                                   <label for="judul" class="form-label"
                                     >Judul</label
@@ -79,6 +80,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="judul"
                                     name="judul"
+                                    value="<?= $dataJurnal['judul']; ?>"
                                     required
                                   />
                                 </div>
@@ -91,6 +93,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="nama_jurnal"
                                     name="nama_jurnal"
+                                    value="<?= $dataJurnal['nama_jurnal']; ?>"
                                     required
                                   />
                                 </div>
@@ -99,10 +102,11 @@ if (isset($_POST['submit'])) {
                                     >Volume</label
                                   >
                                   <input
-                                    type="number"
+                                    type="text"
                                     class="form-control"
                                     id="volume"
                                     name="volume"
+                                    value="<?= $dataJurnal['volume']; ?>"
                                     required
                                   />
                                 </div>
@@ -111,10 +115,11 @@ if (isset($_POST['submit'])) {
                                     >Nomor</label
                                   >
                                   <input
-                                    type="number"
+                                    type="text"
                                     class="form-control"
                                     id="no"
                                     name="no"
+                                    value="<?= $dataJurnal['no']; ?>"
                                     required
                                   />
                                 </div>
@@ -123,10 +128,11 @@ if (isset($_POST['submit'])) {
                                     >Tahun</label
                                   >
                                   <input
-                                    type="number"
+                                    type="text"
                                     class="form-control"
                                     id="tahun"
                                     name="tahun"
+                                    value="<?= $dataJurnal['tahun']; ?>"
                                     required
                                   />
                                 </div>
@@ -139,22 +145,11 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="link_file"
                                     name="link_file"
+                                    value="<?= $dataJurnal['link_file']; ?>"
                                     required
                                   />
                                 </div>
-                                <div class="mb-3">
-                                  <label for="jenjang" class="form-label"
-                                    >Nama Dosen</label
-                                  >
-                                  <select class="form-select" name="id_dosen" id="id_dosen" aria-label="Default select example">
-                                    <option selected>-- Pilih --</option>
-                                    <?php while ($data = mysqli_fetch_array($result)) { ?>
-                                    <option value="<?= $data['id_dosen']; ?>"><?php echo $data['nama'];?></option>
-                                    <?php } ?>
-                                    </select>
-                                </div>
-
-
+                                <input type="hidden" name="id_dosen" value="<?= $dataJurnal['id_dosen']; ?>">
                               </div>
                               <div class="">
                                   <button
@@ -162,20 +157,20 @@ if (isset($_POST['submit'])) {
                                     name="submit"
                                     class="btn btn-blue btn-outline-success"
                                   >
-                                    Tambah
+                                    ubah
                                   </button>
                                 </div>
 
                             </div>
                           </form>
-                         <!-- form tambah pendidikan -->
+                         <!-- form ubah pendidikan -->
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- tambah pendidikan -->
+              <!-- ubah pendidikan -->
             </div>
           </section>
           <!-- main content -->

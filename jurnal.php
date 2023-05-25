@@ -1,10 +1,20 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_jurnal WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
-    
+
     <?php include ('./app/layouts/link.php'); ?>
 
   </head>
@@ -39,6 +49,7 @@
               </div>
 
               <div class="row table-journal-section justify-content-center">
+                 <?php while ($data = mysqli_fetch_array($result2)) { ?>
                 <div
                   class="col-11 col-lg-12 journal-table-wrapper py-3 rounded-4"
                 >
@@ -55,25 +66,24 @@
                           <tbody>
                             <tr>
                               <th>Judul</th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['judul']; ?></td>
+
                             </tr>
                             <tr>
                               <th>Nama Jurnal</th>
-                              <td>Jurnal Bokashi</td>
+                              <td><?= $data['nama_jurnal']; ?></td>
                             </tr>
                             <tr>
                               <th>Vol/No/Tahun</th>
                               <td>
-                                <span>03</span>/<span>10</span>/<span
-                                  >2022</span
+                                <span><?= $data['volume']; ?></span>/<span><?= $data['no']; ?></span>/<span
+                                  ><?= $data['tahun']; ?></span
                                 >
                               </td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -81,7 +91,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                     <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

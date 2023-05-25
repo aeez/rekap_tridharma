@@ -1,7 +1,7 @@
 <?php
-include('../config/functions/functionBuku.php');
+include('../config/functions/functionJurnal.php');
 
-$id = $_GET['id_buku'];
+$id = $_GET['id_jurnal'];
 
 if (hapus($id) > 0) {
     echo "
@@ -14,7 +14,7 @@ if (hapus($id) > 0) {
     echo "
     <script>
         alert('Data gagal dihapus!');
-        document.location.href = 'buku_detail.php';
+        document.location.href = 'jurnal_detail.php';
     </script>
 ";
 }

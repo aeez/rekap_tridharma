@@ -32,7 +32,8 @@ function tambah($request)
 {
     global $conn;
 
-    $judul_jurnal = htmlspecialchars($request['judul_jurnal']);
+    $judul = htmlspecialchars($request['judul']);
+    $nama_jurnal = htmlspecialchars($request['nama_jurnal']);
     $volume = htmlspecialchars($request['volume']);
     $no = htmlspecialchars($request['no']);
     $tahun = htmlspecialchars($request['tahun']);
@@ -40,7 +41,7 @@ function tambah($request)
     $id_dosen = htmlspecialchars($request['id_dosen']);
 
     $query = "INSERT INTO tb_jurnal VALUES
-            (null,'$judul_jurnal','$volume','$no','$tahun','$link_file','$id_dosen')";
+            (null,'$judul','$nama_jurnal','$volume','$no','$tahun','$link_file','$id_dosen')";
 
     mysqli_query($conn, $query);
 
@@ -52,7 +53,8 @@ function ubah($request)
     global $conn;
 
     $id_jurnal = $request['id_jurnal'];
-    $judul_jurnal = htmlspecialchars($request['judul_jurnal']);
+    $judul = htmlspecialchars($request['judul']);
+    $nama_jurnal = htmlspecialchars($request['nama_jurnal']);
     $volume = htmlspecialchars($request['volume']);
     $no = htmlspecialchars($request['no']);
     $tahun = htmlspecialchars($request['tahun']);
@@ -60,7 +62,8 @@ function ubah($request)
     $id_dosen =htmlspecialchars($request['id_dosen']);
 
     $query = "UPDATE tb_jurnal SET
-            judul_jurnal = '$judul_jurnal',
+            judul = '$judul',
+            nama_jurnal = '$nama_jurnal',
             volume = '$volume',
             no = '$no',
             tahun = '$tahun',

@@ -111,8 +111,8 @@ $buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOI
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="jurnal_detail.php?id_dosen=<?= $dataJurnal['id_dosen']; ?>"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
+                                                href="jurnal_detail.php?id_dosen=<?= $dataBuku['id_dosen']; ?>"
+                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Jurnal</a
                                             >
                                             </div>
