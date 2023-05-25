@@ -95,9 +95,9 @@
                     </div>
                   </li>
                   <li class="link-item d-block d-lg-none">
-                    <button class="btn text-light px-3 py-2 rounded">
+                    <a href="logout.php" class="btn text-light px-3 py-2 rounded">
                       Log Out
-                    </button>
+                    </a>
                   </li>
                 </ul>
               </div>

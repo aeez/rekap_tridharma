@@ -33,11 +33,11 @@
                 >Tambah Luaran Hasil</a
             >
             </li>
-            
+
             <li class="link-item d-block d-lg-none">
-            <button class="btn btn-logout px-3 py-2 rounded">
+            <a href="logout.php" class="btn btn-logout px-3 py-2 rounded">
                 Log Out
-            </button>
+            </a>
             </li>
         </ul>
         </div>
