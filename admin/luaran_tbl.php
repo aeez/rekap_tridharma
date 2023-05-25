@@ -1,3 +1,8 @@
+<?php
+include('../config/functions/functionBuku.php');
+$buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOIN tb_dosen ON tb_buku.id_dosen=tb_dosen.id_dosen");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +20,7 @@
       <!-- navbar -->
 
       <!-- main  -->
-      <main>  
+      <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -66,10 +71,13 @@
                               <th>Action</th>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
+                                <?php foreach ($buku as $dataBuku) : ?>
                               <tr>
-                                <td class="fw-bold">1</td>
-                                <td>12345678</td>
-                                <td>John Doe</td>
+
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataBuku['nidn']; ?></td>
+                                <td><?= $dataBuku['nama']; ?></td>
                                 <td class="button">
                                     <div
                                     class="accordion accordion-flush"
@@ -96,14 +104,14 @@
                                         <div class="accordion-body">
                                             <div class="link-wrapper">
                                             <a
-                                                href="buku_detail.php"
+                                                href="buku_detail.php?id_dosen=<?= $dataBuku['id_dosen']; ?>"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
                                                 >Buku</a
                                             >
                                             </div>
                                             <div class="link-wrapper">
                                             <a
-                                                href="jurnal_detail.php"
+                                                href="jurnal_detail.php?id_dosen=<?= $dataJurnal['id_dosen']; ?>"
                                                 class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
                                                 >Jurnal</a
                                             >
@@ -142,158 +150,7 @@
                                     </div>
                                 </td>
                               </tr>
-                              <tr>
-                                <td class="fw-bold">2</td>
-                                <td>13716163</td>
-                                <td>Jontor</td>
-                                <td class="button">
-                                    <div
-                                    class="accordion accordion-flush"
-                                    id="accordionFlushExample"
-                                    >
-                                    <div class="accordion-item rounded-3">
-                                        <p class="accordion-header rounded m-0">
-                                        <button
-                                            class="accordion-button collapsed px-3 py-2 rounded btn-blue"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseTwo"
-                                        >
-                                            Luaran Hasil
-                                        </button>
-                                        </p>
-                                        <div
-                                        id="flush-collapseTwo"
-                                        class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample"
-                                        >
-                                        <div class="accordion-body">
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="buku_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Buku</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="jurnal_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
-                                                >Jurnal</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="makalah_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Pemakalah Seminar Ilmiah</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="hki_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >HKI</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="kebijakan_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Merumuskan Kebijakan publik</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="penghargaan_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light"
-                                                >Penghargaan Dalam</a
-                                            >
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">3</td>
-                                <td>71289382</td>
-                                <td>Micho</td>
-                                <td class="button">
-                                    <div
-                                    class="accordion accordion-flush"
-                                    id="accordionFlushExample"
-                                    >
-                                    <div class="accordion-item rounded-3">
-                                        <p class="accordion-header rounded m-0">
-                                        <button
-                                            class="accordion-button collapsed px-3 py-2 rounded btn-blue"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseThree"
-                                        >
-                                            Luaran Hasil
-                                        </button>
-                                        </p>
-                                        <div
-                                        id="flush-collapseThree"
-                                        class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample"
-                                        >
-                                        <div class="accordion-body">
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="buku_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Buku</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="jurnal_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2 "
-                                                >Jurnal</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="makalah_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Pemakalah Seminar Ilmiah</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="hki_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >HKI</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="kebijakan_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light mb-2"
-                                                >Merumuskan Kebijakan publik</a
-                                            >
-                                            </div>
-                                            <div class="link-wrapper">
-                                            <a
-                                                href="penghargaan_detail.php"
-                                                class="nav-link px-2 py-1 rounded list-blue text-light"
-                                                >Penghargaan Dalam</a
-                                            >
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </td>
-                              </tr>
+                                <?php endforeach; ?>
                             </tbody>
                           </table>
                         </div>

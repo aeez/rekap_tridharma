@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionBuku.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_buku INNER JOIN tb_dosen ON tb_buku.id_dosen=tb_dosen.id_dosen WHERE tb_buku.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,9 +43,12 @@
               </div>
 
               <div class="row table-book-section justify-content-center">
-                <div class="col-11 col-lg-12 book-table-wrapper py-3 rounded-4">
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
+                <div class="col-11 col-lg-12 book-table-wrapper py-3 rounded-4 mb-4">
+
                   <div class="row heading-book mb-3">
                     <div class="col-lg-12">
+
                       <h4 class="fw-bold">Buku</h4>
                     </div>
                   </div>
@@ -49,25 +60,24 @@
                           <tbody>
                             <tr>
                               <th>Judul</th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['judul_buku']; ?></td>
+
                             </tr>
                             <tr>
                               <th>Tahun</th>
-                              <td>2022</td>
+                              <td><?= $data['tahun']; ?></td>
                             </tr>
                             <tr>
                               <th>Jumlah Halaman</th>
-                              <td>255</td>
+                              <td><?= $data['jumlah_halaman']; ?> Halaman</td>
                             </tr>
                             <tr>
                               <th>Penerbit</th>
-                              <td>PT. Matahari</td>
+                              <td><?= $data['penerbit']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -79,24 +89,26 @@
                     <div class="col-12 d-flex justify-content-end">
                       <div class="button-edit-wrapper me-2" style="width: 5em">
                         <a
-                          href="#"
-                          class="btn-blue btn w-100"
-                          style="background-color: #002743; color: white"
-                          >Edit</a
-                        >
+                              href="buku_ubah.php?id_buku=<?= $data['id_buku']; ?>"
+                              class="btn-blue btn w-100"
+                              style="background-color: #002743; color: white"
+                              >Edit</a
+                            >
                       </div>
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
-                          href="#"
-                          class="btn w-100"
-                          style="border: 1px solid #002743"
-                          >Hapus</a
-                        >
+                              href="buku_hapus.php?id_buku=<?= $data['id_buku']; ?>"
+                              class="btn w-100"
+                              style="border: 1px solid #002743"
+                              onclick="return confirm('Yakin?')"
+                              >Hapus</a
+                            >
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>
