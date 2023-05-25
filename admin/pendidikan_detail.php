@@ -99,7 +99,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_pendidikan INNER JOIN tb_dosen O
                                   </td>
                                 </tr>
                                 <?php } ?>
-                               
+
                               </tbody>
                             </table>
                           </div>
@@ -108,7 +108,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_pendidikan INNER JOIN tb_dosen O
 
                       <div class="row button">
                         <div class="col-12 d-flex justify-content-end">
-                          
+
                         </div>
                       </div>
                     </div>

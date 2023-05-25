@@ -15,7 +15,7 @@
       <!-- navbar -->
 
       <!-- main  -->
-      <main>  
+      <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -38,7 +38,7 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Penelitian</a>
+                          <a href="penelitian_tambah.php" class="btn btn-blue">Tambah Penelitian</a>
                         </div>
                       </div>
                     </div>

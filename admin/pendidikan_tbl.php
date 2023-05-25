@@ -21,7 +21,7 @@ $pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendi
       <!-- navbar -->
 
       <!-- main  -->
-      <main>  
+      <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -29,7 +29,7 @@ $pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendi
 
           <!-- main content -->
           <section class="main-content w-100 bg-light">
-            <div class="container py-4">  
+            <div class="container py-4">
               <!-- welcome -->
               <div class="row welcome p-2 justify-content-center">
                 <div class="col-11 col-lg-12 welcome-text">
@@ -71,7 +71,7 @@ $pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendi
                                 </td>
                               </tr>
                               <?php endforeach; ?>
-                              
+
                             </tbody>
                           </table>
                         </div>
