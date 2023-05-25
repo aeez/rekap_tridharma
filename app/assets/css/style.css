@@ -1,3 +1,13 @@
+.btn-blue {
+  background-color: #002743;
+  color: white;
+}
+
+.list-blue {
+  background-color: rgba(0, 39, 67, 0.8);
+  color: blue;
+}
+
 .login-card {
   background-color: #fff;
 }
@@ -47,6 +57,13 @@
   background-color: white;
   color: #002743;
 }
+.aside-sidebar .sidebar .link-sidebar ul .link-item .btn-logout {
+  color: white;
+}
+.aside-sidebar .sidebar .link-sidebar ul .link-item .btn-logout:hover {
+  background-color: white;
+  color: #002743;
+}
 .aside-sidebar .sidebar .link-sidebar ul .link-item .accordion .accordion-item .accordion-header .accordion-button {
   background-color: white;
   color: #002743;
@@ -87,15 +104,16 @@
   position: relative;
 }
 .main-wrapper .main-content {
-  min-height: 82vh;
+  min-height: 100vh;
 }
 .main-wrapper .main-content .container .profile-identity .profile-section {
   background-color: white;
 }
 .main-wrapper .main-content .container .profile-identity .profile-section .profile-image-wrapper img {
-  object-fit: cover;
+  object-fit: contain;
   margin: auto;
-  width: 14em;
+  width: 10em;
+  height: 10em;
 }
 .main-wrapper .main-content .container .profile-identity .identity-section {
   background-color: white;
@@ -103,17 +121,27 @@
 .main-wrapper .main-content .container .profile-identity .education-section {
   background-color: white;
 }
-.main-wrapper .main-content .footer {
-  background-color: #002743;
-  color: white;
-}
 
 .footer {
   background-color: #002743;
   color: white;
 }
 
-.main-content .container .table-section .wrapper-table {
+.main-content .container .beranda-section .wrapper-item .beranda-item .beranda-item-wrapper {
+  background-color: white;
+}
+
+.profile-dosen .profile-wrapper .wrapper-body {
+  background-color: white;
+}
+.profile-dosen .profile-wrapper .wrapper-body img {
+  object-fit: contain;
+  margin: auto;
+  width: 14em;
+  height: 14em;
+}
+
+.table-section .wrapper-table {
   background-color: white;
 }
 
@@ -121,21 +149,14 @@
   background-color: #fff;
 }
 .profile-dosen .profile-wrapper .wrapper-body .img {
-  object-fit: cover;
+  object-fit: contain;
+  width: 10em;
+  width: 10em;
   margin: auto;
 }
 .profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper,
 .profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper {
   width: 5em;
-}
-.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper .button-edit,
-.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper .button-edit {
-  background-color: #002743;
-  color: white;
-}
-.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-edit-wrapper .button-hapus,
-.profile-dosen .profile-wrapper .wrapper-body .button .col-12 .button-hapus-wrapper .button-hapus {
-  border: 1px solid #002743;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td,
@@ -162,7 +183,7 @@
   }
 }
 .pengabdian-dosen .pengabdian-wrapper .wrapper-body {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 .pengabdian-dosen .pengabdian-wrapper .wrapper-body .img {
   object-fit: cover;
@@ -203,6 +224,24 @@
   background-color: white;
 }
 
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button {
+  width: 50%;
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-item .accordion-button {
+  width: 50%;
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-button::after {
+  content: "";
+  background-image: url(../img/Dropdownbiru.png);
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .collapsed::after {
+  content: "";
+  background-image: url(../img/Dropdown.png);
+}
+.main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-body .link-wrapper .nav-link {
+  width: 50%;
+}
+
 @media screen and (max-width: 992px) {
   .navbar {
     background-color: #002743;
@@ -239,5 +278,22 @@
   }
   .main-content {
     min-height: 82vh;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button {
+    width: 100%;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-item .accordion-button {
+    width: 100%;
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-button::after {
+    content: "";
+    background-image: url(../img/Dropdownbiru.png);
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .collapsed::after {
+    content: "";
+    background-image: url(../img/Dropdown.png);
+  }
+  .main-content .container .table-section .wrapper-table .table-profil .col-12 .table-responsive .table tbody tr .button .accordion .accordion-body .link-wrapper .nav-link {
+    width: 100%;
   }
 }

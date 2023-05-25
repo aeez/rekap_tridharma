@@ -12,6 +12,7 @@ $dosen = query("SELECT * FROM tb_dosen");
     <title>TRIDHARMA</title>
 
     <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
+    
 
   </head>
   <body>

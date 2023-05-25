@@ -45,7 +45,7 @@ $jumlahDosen = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_dosen"));
                 <div class="col-11 col-lg-12">
                   <div class="wrapper-item p-3 rounded-4">
                     <div class="row beranda-item">
-                      <div class="col-lg-12 beranda-item-wrapper rounded-4 py-3">
+                      <div class="col-lg-12 beranda-item-wrapper rounded-4 py-3" style="background-color: white;">
                         <span class="fs-5">Jumlah Dosen</span>
                         <p class="fs-4 fw-bold m-0"><?= $jumlahDosen; ?></p>
                       </div>

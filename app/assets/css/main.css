@@ -179,7 +179,7 @@
   }
 }
 .pengabdian-dosen .pengabdian-wrapper .wrapper-body {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 .pengabdian-dosen .pengabdian-wrapper .wrapper-body .img {
   object-fit: cover;

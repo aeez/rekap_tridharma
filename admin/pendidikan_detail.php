@@ -48,12 +48,12 @@ $result = mysqli_query($conn, "SELECT * FROM tb_pendidikan INNER JOIN tb_dosen O
               <div class="row profile-dosen mb-3">
                 <div class="col-lg-12">
                   <div class="profile-wrapper">
-                    <div class="wrapper-body rounded-4 p-4">
+                    <div class="wrapper-body rounded-4 px-3 py-1">
                       <div class="row align-items-center mt-4">
                         <div class="col-lg-12">
                           <div class="table-responsive">
                             <table
-                              class="table table-2 table-striped table-borderless"
+                              class="table table-2 table-striped table-borderless" id="data-table"
                             >
                               <thead>
                                 <tr>
@@ -75,26 +75,28 @@ $result = mysqli_query($conn, "SELECT * FROM tb_pendidikan INNER JOIN tb_dosen O
                                   <td><?= $data['tahun_lulus']; ?></td>
                                   <td><?= $data['gelar_akademik']; ?></td>
                                   <td><?= $data['jenjang']; ?></td>
-                                  <td class="d-flex">
-                                    <div
-                                      class="button-edit-wrapper me-2"
-                                      style="width: 5em"
-                                    >
-                                      <a
-                                        href="pendidikan_ubah.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
-                                        class="btn-blue btn w-100"
-                                        style="background-color: #002743; color: white"
-                                        >Edit</a
+                                  <td>
+                                    <div class="d-flex align-items-stretch">
+                                      <div
+                                        class="button-edit-wrapper me-2"
+                                        style="width: 5em"
                                       >
-                                    </div>
-                                    <div class="button-hapus-wrapper" style="width: 5em">
-                                      <a
-                                        href="pendidikan_hapus.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
-                                        class="btn w-100"
-                                        style="border: 1px solid #002743"
-                                        onclick="return confirm('Yakin?')"
-                                        >Hapus</a
-                                      >
+                                        <a
+                                          href="pendidikan_ubah.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
+                                          class="btn-blue btn w-100"
+                                          style="background-color: #002743; color: white"
+                                          >Edit</a
+                                        >
+                                      </div>
+                                      <div class="button-hapus-wrapper" style="width: 5em">
+                                        <a
+                                          href="pendidikan_hapus.php?id_pendidikan=<?= $data['id_pendidikan']; ?>"
+                                          class="btn w-100"
+                                          style="border: 1px solid #002743"
+                                          onclick="return confirm('Yakin?')"
+                                          >Hapus</a
+                                        >
+                                      </div>
                                     </div>
                                   </td>
                                 </tr>
