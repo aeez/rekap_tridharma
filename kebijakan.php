@@ -1,10 +1,21 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_kebijakan WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
-    
+
     <?php include ('./app/layouts/link.php'); ?>
 
   </head>
@@ -26,10 +37,10 @@
             <div class="container py-4">
               <!-- book -->
               <div
-                class="row makalah-title justify-content-center mb-2 mb-lg-3"
+                class="row kebijakan-title justify-content-center mb-2 mb-lg-3"
               >
                 <div class="col-11 col-lg-12">
-                  <div class="makalah-title-wrapper py-2">
+                  <div class="kebijakan-title-wrapper py-2">
                     <h2 class="fw-semibold">Luaran Hasil</h2>
                     <h6 class="text">
                       Sistem Informasi Tridharma Universitas Negeri Medan
@@ -39,8 +50,9 @@
               </div>
 
               <div class="row table-kebijakan-section justify-content-center">
-                <div
-                  class="col-11 col-lg-12 kebijakan-table-wrapper py-3 rounded-4"
+                <?php while ($data = mysqli_fetch_array($result2)) { ?>
+              <div
+                  class="col-11 col-lg-12 kebijakan-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-kebijakan mb-3">
                     <div class="col-lg-12">
@@ -55,19 +67,15 @@
                           <tbody>
                             <tr>
                               <th>jenis Penghargaan</th>
-                              <td>Medali Emas</td>
-                            </tr>
-                            <tr>
-                              <th>Institusi Pemberi Penghargaan</th>
-                              <td>Institut Negeri Medan</td>
+                              <td><?= $data['jenis_penghargaan']; ?></td>
                             </tr>
                             <tr>
                               <th>Tahun</th>
-                              <td>2023</td>
+                              <td><?= $data['tahun']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                             <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -75,7 +83,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

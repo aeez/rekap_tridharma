@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionKebijakan.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_kebijakan INNER JOIN tb_dosen ON tb_kebijakan.id_dosen=tb_dosen.id_dosen WHERE tb_kebijakan.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,8 +45,9 @@
               </div>
 
               <div class="row table-kebijakan-section justify-content-center">
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
                 <div
-                  class="col-11 col-lg-12 kebijakan-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 kebijakan-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-kebijakan mb-3">
                     <div class="col-lg-12">
@@ -53,7 +62,7 @@
                           <tbody>
                             <tr>
                               <th>Jenis Penghargaan</th>
-                              <td>Medali Emas</td>
+                              <td><?= $data['jenis_penghargaan']; ?></td>
                             </tr>
                             <!-- <tr>
                               <th>Institusi Pemberi Penghargaan</th>
@@ -61,11 +70,11 @@
                             </tr> -->
                             <tr>
                               <th>Tahun</th>
-                              <td>2023</td>
+                              <td><?= $data['tahun']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -77,16 +86,17 @@
                     <div class="col-12 d-flex justify-content-end">
                       <div class="button-edit-wrapper me-2" style="width: 5em">
                         <a
-                          href="#"
-                          class="btn-blue btn w-100"
-                          style="background-color: #002743; color: white"
-                          >Edit</a
-                        >
+                              href="kebijakan_ubah.php?id_penghargaan=<?= $data['id_penghargaan']; ?>"
+                              class="btn-blue btn w-100"
+                              style="background-color: #002743; color: white"
+                              >Edit</a
+                            >
                       </div>
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
-                          href="#"
+                          href="kebijakan_hapus.php?id_penghargaan=<?= $data['id_penghargaan']; ?>"
                           class="btn w-100"
+                          onclick="return confirm('Yakin?')"
                           style="border: 1px solid #002743"
                           >Hapus</a
                         >
@@ -94,7 +104,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                    <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

@@ -102,6 +102,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_hki INNER JOIN tb_dosen ON tb_hk
                           href="hki_hapus.php?id_hki=<?= $data['id_hki']; ?>"
                           class="btn-blue btn w-100"
                           style="border: 1px solid #002743"
+                          onclick="return confirm('Yakin?')"
                           >Hapus</a
                         >
                       </div>

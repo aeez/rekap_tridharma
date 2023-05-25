@@ -1,5 +1,5 @@
 <?php
-include('../config/functions/functionPenelitian.php');
+include('../config/functions/functionPenghargaan.php');
 
 $result = mysqli_query($conn, "SELECT * FROM tb_dosen");
 
@@ -9,14 +9,14 @@ if (isset($_POST['submit'])) {
         echo "
             <script>
                 alert('Data berhasil ditambah!');
-                document.location.href = 'penelitian_tbl.php';
+                document.location.href = 'penghargaan_tbl.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data gagal ditambah!');
-                document.location.href = 'penelitian_tambah.php';
+                document.location.href = 'penghargaan_tambah.php';
             </script>
         ";
     }
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
                 <div class="col-lg-12">
                   <div class="profile-wrapper">
                     <div class="wrapper-body rounded-4 p-4">
-                      <div class="row tambah-penelitian">
+                      <div class="row tambah-penghargaan">
                         <div class="form-tambah">
                             <!-- form tambah start -->
                           <form action="" method="POST">

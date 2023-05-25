@@ -1,6 +1,6 @@
 <?php
-include('../config/functions/functionBuku.php');
-$buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOIN tb_dosen ON tb_buku.id_dosen=tb_dosen.id_dosen");
+include('../config/functions/functionKebijakan.php');
+$kebijakan = query("SELECT DISTINCT nama,nidn,tb_kebijakan.id_dosen FROM tb_kebijakan INNER JOIN tb_dosen ON tb_kebijakan.id_dosen=tb_dosen.id_dosen");
 ?>
 
 <!DOCTYPE html>
@@ -60,13 +60,13 @@ $buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOI
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                <?php foreach ($buku as $data) : ?>
+                                <?php foreach ($kebijakan as $dataKebijakan) : ?>
                               <tr>
                                 <td class="fw-bold"><?= $no++; ?></td>
-                                <td><?= $dataBuku['nidn']; ?></td>
-                                <td><?= $dataBuku['nama']; ?></td>
+                                <td><?= $dataKebijakan['nidn']; ?></td>
+                                <td><?= $dataKebijakan['nama']; ?></td>
                                 <td class="button">
-                                  <a href="jurnal_detail.php?id_dosen=<?= $dataBuku['id_dosen']; ?>" class="btn btn-blue">Detail</a>
+                                  <a href="kebijakan_detail.php?id_dosen=<?= $dataKebijakan['id_dosen']; ?>"  class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                                 <?php endforeach; ?>

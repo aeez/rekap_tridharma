@@ -105,6 +105,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_jurnal INNER JOIN tb_dosen ON tb
                           href="jurnal_hapus.php?id_jurnal=<?= $data['id_jurnal']; ?>"
                           class=" btn w-100"
                           style="border: 1px solid #002743"
+                          onclick="return confirm('Yakin?')"
                           >Hapus</a
                         >
                       </div>

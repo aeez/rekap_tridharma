@@ -1,3 +1,14 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_penghargaan WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,8 +48,9 @@
               </div>
 
               <div class="row table-penghargaan-section justify-content-center">
+                 <?php while ($data = mysqli_fetch_array($result2)) { ?>
                 <div
-                  class="col-11 col-lg-12 penghargaan-table-wrapper py-3 rounded-4"
+                  class="col-11 col-lg-12 penghargaan-table-wrapper py-3 rounded-4 mb-4"
                 >
                   <div class="row heading-penghargaan mb-3">
                     <div class="col-lg-12">
@@ -53,19 +65,19 @@
                           <tbody>
                             <tr>
                               <th>jenis Penghargaan</th>
-                              <td>Medali Perak</td>
+                              <td><?= $data['jenis_penghargaan']; ?></td>
                             </tr>
                             <tr>
                               <th>Institusi Pemberi Penghargaan</th>
-                              <td>Institut Negeri Medan</td>
+                              <td><?= $data['institusi']; ?></td>
                             </tr>
                             <tr>
                               <th>Tahun</th>
-                              <td>2023</td>
+                               <td><?= $data['tahun']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -73,7 +85,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                    <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

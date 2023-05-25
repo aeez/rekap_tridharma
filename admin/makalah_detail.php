@@ -99,6 +99,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_pemakalah INNER JOIN tb_dosen ON
                           href="makalah_hapus.php?id_pemakalah=<?= $data['id_pemakalah']; ?>"
                           class="btn w-100"
                           style="border: 1px solid #002743"
+                          onclick="return confirm('Yakin?')"
                           >Hapus</a
                         >
                       </div>

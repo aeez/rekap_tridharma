@@ -1,3 +1,8 @@
+<?php
+include('../config/functions/functionPenghargaan.php');
+$penghargaan = query("SELECT DISTINCT nama,nidn,tb_penghargaan.id_dosen FROM tb_penghargaan INNER JOIN tb_dosen ON tb_penghargaan.id_dosen=tb_dosen.id_dosen");
+?>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -15,7 +20,7 @@
         <!-- navbar -->
 
         <!-- main  -->
-        <main>  
+        <main>
             <div class="main-wrapper d-flex">
             <!-- sidebar -->
             <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -47,47 +52,26 @@
                         <div class="col-12">
                             <div class="table-responsive">
                             <table class="table" id="data-table">
-                                <thead>
-                                <th>No</th>
-                                <th>NIDN</th>
-                                <th>Nama</th>
-                                <th>Action</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="fw-bold">1</td>
-                                    <td>12345678</td>
-                                    <td>John Doe</td>
-                                    <td>
-                                    <a href="penghargaan_detail.php" class="btn btn-blue">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">2</td>
-                                    <td>13716163</td>
-                                    <td>Jontor</td>
-                                    <td>
-                                    <a href="penghargaan_detail.php" class="btn btn-blue">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">3</td>
-                                    <td>71289382</td>
-                                    <td>Micho</td>
-                                    <td>
-                                    <a href="penghargaan_detail.php" class="btn btn-blue">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold">4</td>
-                                    <td>10237598</td>
-                                    <td>Misel</td>
-                                    <td>
-                                    <a href="penghargaan_detail.php" class="btn btn-blue">Detail</a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <thead>
+                              <th>No</th>
+                              <th>NIDN</th>
+                              <th>Nama</th>
+                              <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1; ?>
+                                <?php foreach ($penghargaan as $dataPenghargaan) : ?>
+                              <tr>
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataPenghargaan['nidn']; ?></td>
+                                <td><?= $dataPenghargaan['nama']; ?></td>
+                                <td class="button">
+                                  <a href="penghargaan_detail.php?id_dosen=<?= $dataPenghargaan['id_dosen']; ?>"  class="btn btn-blue">Detail</a>
+                                </td>
+                              </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                          </table>
                             </div>
                         </div>
                         </div>
