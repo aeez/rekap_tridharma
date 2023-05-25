@@ -27,7 +27,7 @@
                 <!-- welcome -->
                 <div class="row welcome p-2 justify-content-center">
                     <div class="col-11 col-lg-12 welcome-text">
-                    <h3 class="fw-bold">Riwayat Pendidikan</h3>
+                    <h3 class="fw-bold">Luaran Hasil (Penghargaan Dalam)</h3>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                         <div class="row button-section mb-3">
                         <div class="col-12">
                             <div class="button-tambah-wrapper">
-                            <a href="tambah_riwayat.php" class="btn btn-blue">Tambah Riwayat Pendidikan</a>
+                            <a href="penghargaan_tambah.php" class="btn btn-blue">Tambah Penghargaan Dalam</a>
                             </div>
                         </div>
                         </div>
