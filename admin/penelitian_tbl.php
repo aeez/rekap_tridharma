@@ -1,3 +1,10 @@
+<?php
+include('../config/functions/functionPenelitian.php');
+$penelitian = query("SELECT DISTINCT nama,nidn,tb_penelitian.id_dosen FROM tb_penelitian INNER JOIN tb_dosen ON tb_penelitian.id_dosen=tb_dosen.id_dosen");
+// $dosen = query("SELECT * FROM tb");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,38 +61,17 @@
                               <th>Action</th>
                             </thead>
                             <tbody>
+                              <?php $no = 1; ?>
+                              <?php foreach ($penelitian as $dataPenelitian) : ?>
                               <tr>
-                                <td class="fw-bold">1</td>
-                                <td>12345678</td>
-                                <td>John Doe</td>
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataPenelitian['nidn']; ?></td>
+                                <td><?= $dataPenelitian['nama']; ?></td>
                                 <td>
-                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="penelitian_detail.php?id_dosen=<?= $dataPenelitian['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td class="fw-bold">2</td>
-                                <td>13716163</td>
-                                <td>Jontor</td>
-                                <td>
-                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">3</td>
-                                <td>71289382</td>
-                                <td>Micho</td>
-                                <td>
-                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">4</td>
-                                <td>10237598</td>
-                                <td>Misel</td>
-                                <td>
-                                  <a href="penelitian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
+                              <?php endforeach; ?>
                             </tbody>
                           </table>
                         </div>

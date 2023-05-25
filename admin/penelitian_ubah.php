@@ -1,28 +1,28 @@
 <?php
-// include('../config/functions/functionPendidikan.php');
+include('../config/functions/functionPenelitian.php');
 
-// $id = $_GET['id_pendidikan'];
+$id = $_GET['id_penelitian'];
 
-// $dataPend = query("SELECT * FROM tb_pendidikan WHERE id_pendidikan = $id")[0];
+$dataPenelitian = query("SELECT * FROM tb_penelitian WHERE id_penelitian = $id")[0];
 
-// if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-//     if (ubah($_POST) > 0) {
-//         echo "
-//             <script>
-//                 alert('Data berhasil diubah!');
-//                 document.location.href = 'pendidikan_tbl.php';
-//             </script>
-//         ";
-//     } else {
-//         echo "
-//             <script>
-//                 alert('Data gagal diubah!');
-//                 document.location.href = 'pendidikan_ubah.php';
-//             </script>
-//         ";
-//     }
-// }
+    if (ubah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil diubah!');
+                document.location.href = 'penelitian_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal diubah!');
+                document.location.href = 'penelitian_ubah.php';
+            </script>
+        ";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +70,7 @@
                           <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
-                                <input type="hidden" name="id_penelitian" value="<?= $dataPene['id_penelitian']; ?>">
+                                <input type="hidden" name="id_penelitian" value="<?= $dataPenelitian['id_penelitian']; ?>">
                                 <div class="mb-3">
                                   <label for="judul_penelitian" class="form-label"
                                     >Judul Penelitian</label
@@ -80,7 +80,7 @@
                                     class="form-control"
                                     id="judul_penelitian"
                                     name="judul_penelitian"
-                                    value="<?= $dataPene['judul_penelitian']; ?>"
+                                    value="<?= $dataPenelitian['judul_penelitian']; ?>"
                                     required
                                   />
                                 </div>
@@ -93,7 +93,7 @@
                                     class="form-control"
                                     id="tahun"
                                     name="tahun"
-                                    value="<?= $dataPene['tahun']; ?>"
+                                    value="<?= $dataPenelitian['tahun']; ?>"
                                     required
                                   />
                                 </div>
@@ -106,7 +106,7 @@
                                     class="form-control"
                                     id="sumber_dana"
                                     name="sumber_dana"
-                                    value="<?= $dataPene['sumber_dana']; ?>"
+                                    value="<?= $dataPenelitian['sumber_dana']; ?>"
                                     required
                                   />
                                 </div>
@@ -119,24 +119,24 @@
                                     class="form-control"
                                     id="nominal_dana"
                                     name="nominal_dana"
-                                    value="<?= $dataPene['nominal_dana']; ?>"
+                                    value="<?= $dataPenelitian['nominal_dana']; ?>"
                                     required
                                   />
                                 </div>
                                 <div class="mb-3">
                                   <label for="link_file" class="form-label"
-                                    >Link File</label
+                                    >Link File (Google Drive)</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
                                     id="link_file"
                                     name="link_file"
-                                    value="<?= $dataPene['link_file']; ?>"
+                                    value="<?= $dataPenelitian['link_file']; ?>"
                                     required
                                   />
                                 </div>
-                                <input type="hidden" name="id_dosen" value="<?= $dataPene['id_dosen']; ?>">
+                                <input type="hidden" name="id_dosen" value="<?= $dataPenelitian['id_dosen']; ?>">
                               </div>
                               <div class="">
                                   <button

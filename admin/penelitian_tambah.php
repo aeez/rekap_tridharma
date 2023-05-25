@@ -1,26 +1,26 @@
 <?php
-// include('../config/functions/functionPendidikan.php');
+include('../config/functions/functionPenelitian.php');
 
-// $result = mysqli_query($conn, "SELECT * FROM tb_dosen");
+$result = mysqli_query($conn, "SELECT * FROM tb_dosen");
 
-// if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-//     if (tambah($_POST) > 0) {
-//         echo "
-//             <script>
-//                 alert('Data berhasil ditambah!');
-//                 document.location.href = 'pendidikan_tbl.php';
-//             </script>
-//         ";
-//     } else {
-//         echo "
-//             <script>
-//                 alert('Data gagal ditambah!');
-//                 document.location.href = 'pendidikan_tambah.php';
-//             </script>
-//         ";
-//     }
-// }
+    if (tambah($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil ditambah!');
+                document.location.href = 'penelitian_tbl.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data gagal ditambah!');
+                document.location.href = 'penelitian_tambah.php';
+            </script>
+        ";
+    }
+}
 
 
  ?>
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label for="link_file" class="form-label"
-                                    >Link File</label
+                                    >Link File (Google Drive)</label
                                   >
                                   <input
                                     type="text"

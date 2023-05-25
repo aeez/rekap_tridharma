@@ -1,9 +1,28 @@
 <?php
 include('./config/functions/dosen/functionAuth.php');
 
+if (!isset($_SESSION['login'])) {
+  header('location: auth_login.php');
+}
+
+if ($_SESSION['level'] == 'customer') {
+  header('location:index.php');
+}
+
+$jumlahPenelitian = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_penelitian WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahPengabdianMasyarakat = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pengabdian_masyarakat WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahBuku = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_buku WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahJurnal = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_jurnal WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahPemakalah = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pemakalah WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahHKI = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_hki WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahKebijakanPublik = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_kebijakan_publik WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahPenghargaan = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_penghargaan WHERE id_dosen = $_SESSION[id_dosen]"));
+
 // $dosen_id = $_SESSION['id_dosen'];
 $result = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
 $dataDosen = mysqli_fetch_array($result);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -90,13 +109,13 @@ $dataDosen = mysqli_fetch_array($result);
                       <div class="col-12 col-lg-6 col-item">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Penelitian</span>
-                          <p class="fs-4 fw-bold m-0">5</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahPenelitian; ?></p>
                         </div>
                       </div>
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Pengabdian Masyarakat</span>
-                          <p class="fs-4 fw-bold m-0">2</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahPengabdianMasyarakat; ?></p>
                         </div>
                       </div>
                     </div>
@@ -104,13 +123,13 @@ $dataDosen = mysqli_fetch_array($result);
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Buku</span>
-                          <p class="fs-4 fw-bold m-0">3</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahBuku; ?></p>
                         </div>
                       </div>
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Jurnal</span>
-                          <p class="fs-4 fw-bold m-0">1</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahJurnal; ?></p>
                         </div>
                       </div>
                     </div>
@@ -118,13 +137,13 @@ $dataDosen = mysqli_fetch_array($result);
                       <div class="col-12 col-lg-6 ">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Pemakalah Seminar Ilmiah</span>
-                          <p class="fs-4 fw-bold m-0">2</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahPemakalah; ?></p>
                         </div>
                       </div>
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah HKI</span>
-                          <p class="fs-4 fw-bold m-0">3</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahHKI; ?></p>
                         </div>
                       </div>
                     </div>
@@ -132,13 +151,13 @@ $dataDosen = mysqli_fetch_array($result);
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Merumuskan Kebijakan Publik</span>
-                          <p class="fs-4 fw-bold m-0">4</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahKebijakanPublik; ?></p>
                         </div>
                       </div>
                       <div class="col-12 col-lg-6">
                         <div class="item-wrapper rounded-4 p-3" style="background-color: white;">
                           <span>Jumlah Pengabdian Penghargaan Dalam</span>
-                          <p class="fs-4 fw-bold m-0">1</p>
+                          <p class="fs-4 fw-bold m-0"><?= $jumlahPenghargaan; ?></p>
                         </div>
                       </div>
                     </div>

@@ -1,3 +1,12 @@
+<?php
+include('../config/functions/functionPenelitian.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_penelitian INNER JOIN tb_dosen ON tb_penelitian.id_dosen=tb_dosen.id_dosen WHERE tb_penelitian.id_dosen = $id");
+// $result = query("SELECT * FROM tb_penelitian INNER JOIN tb_dosen ON tb_penelitian.id_dosen=tb_dosen.id_dosen ");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,6 +45,7 @@
               <!-- penelitian -->
               <div class="row penelitian-dosen justify-content-center mb-4">
                 <div class="col-lg-12">
+                  <?php while ($data = mysqli_fetch_array($result)) { ?>
                   <div class="penelitian-wrapper">
                     <div class="wrapper-body rounded-4 p-4">
                       <div class="row align-items-center">
@@ -43,17 +53,16 @@
                           <div class="table-responsive">
                             <table class="table table-striped table-borderless">
                               <tbody>
+                                
                                 <tr>
                                   <th width="20%">Judul Penelitian</th>
                                   <td>
-                                    Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Sint doloribus natus
-                                    repudiandae qui vitae vero cumque.
+                                    <?= $data['judul_penelitian']; ?>
                                   </td>
                                 </tr>
                                 <tr>
                                   <th>Tahun</th>
-                                  <td>2015</td>
+                                  <td><?= $data['tahun']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Pendanaan</th>
@@ -61,20 +70,19 @@
                                 </tr>
                                 <tr>
                                   <th class="ps-4">1. Sumber Dana</th>
-                                  <td>Universitas</td>
+                                  <td><?= $data['sumber_dana']; ?></td>
                                 </tr>
                                 <tr>
-                                  <th class="ps-4">2. Jumlah (Juta Rp.)</th>
-                                  <td>RP. 50 Juta</td>
+                                  <th class="ps-4">2. Jumlah (Rp.)</th>
+                                  <td>RP.<?= number_format($data["nominal_dana"], 0, ".", "."); ?>,-</td>
                                 </tr>
                                 <tr>
                                   <th>Link Google Drive</th>
                                   <td>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Maxime at incidunt autem
-                                    tenetur, ratione provident.
+                                    <?= $data['link_file']; ?>
                                   </td>
                                 </tr>
+                                
                               </tbody>
                             </table>
                           </div>
@@ -88,7 +96,7 @@
                             style="width: 5em"
                           >
                             <a
-                              href="#"
+                              href="penelitian_ubah.php?id_penelitian=<?= $data['id_penelitian']; ?>"
                               class="btn-blue btn w-100"
                               style="background-color: #002743; color: white"
                               >Edit</a
@@ -96,9 +104,10 @@
                           </div>
                           <div class="button-hapus-wrapper" style="width: 5em">
                             <a
-                              href="#"
+                              href="penelitian_hapus.php?id_penelitian=<?= $data['id_penelitian']; ?>"
                               class="btn w-100"
                               style="border: 1px solid #002743"
+                              onclick="return confirm('Yakin?')"
                               >Hapus</a
                             >
                           </div>
@@ -106,6 +115,7 @@
                       </div>
                     </div>
                   </div>
+                  <?php } ?>
                 </div>
               </div>
               <!-- penelitian -->

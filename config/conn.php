@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "rekap_tridharma";
+$database = "rekap_tridharma1";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);

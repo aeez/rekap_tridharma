@@ -1,6 +1,6 @@
 <?php
 include('../config/functions/functionPendidikan.php');
-$pendidikan = query("SELECT * FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendidikan.id_dosen=tb_dosen.id_dosen");
+$pendidikan = query("SELECT DISTINCT nama,nidn,tb_pendidikan.id_dosen FROM tb_pendidikan INNER JOIN tb_dosen ON tb_pendidikan.id_dosen=tb_dosen.id_dosen");
 // $dosen = query("SELECT * FROM tb");
 
 ?>
