@@ -1,3 +1,8 @@
+<?php
+include('../config/functions/functionPengabdian.php');
+$pengabdian = query("SELECT DISTINCT nama,nidn,tb_pengabdian.id_dosen FROM tb_pengabdian INNER JOIN tb_dosen ON tb_pengabdian.id_dosen=tb_dosen.id_dosen");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +20,7 @@
       <!-- navbar -->
 
       <!-- main  -->
-      <main>  
+      <main>
         <div class="main-wrapper d-flex">
           <!-- sidebar -->
           <?php include ('../app/layouts/layout_admin/sidebar_admin.php'); ?>
@@ -23,7 +28,7 @@
 
           <!-- main content -->
           <section class="main-content w-100 bg-light">
-            <div class="container py-4">  
+            <div class="container py-4">
               <!-- welcome -->
               <div class="row welcome p-2 justify-content-center">
                 <div class="col-11 col-lg-12 welcome-text">
@@ -38,7 +43,7 @@
                     <div class="row button-section mb-3">
                       <div class="col-12">
                         <div class="button-tambah-wrapper">
-                          <a href="tambah_dosen.php" class="btn btn-blue">Tambah Pengabdian Masyarakat</a>
+                          <a href="pengabdian_tambah.php" class="btn btn-blue">Tambah Pengabdian Masyarakat</a>
                         </div>
                       </div>
                     </div>
@@ -54,38 +59,17 @@
                               <th>Action</th>
                             </thead>
                             <tbody>
+                            <?php $no = 1; ?>
+                              <?php foreach ($pengabdian as $dataPengabdian) : ?>
                               <tr>
-                                <td class="fw-bold">1</td>
-                                <td>12345678</td>
-                                <td>John Doe</td>
+                                <td class="fw-bold"><?= $no++; ?></td>
+                                <td><?= $dataPengabdian['nidn']; ?></td>
+                                <td><?= $dataPengabdian['nama']; ?></td>
                                 <td>
-                                  <a href="pengabdian_detail.php" class="btn btn-blue">Detail</a>
+                                  <a href="pengabdian_detail.php?id_dosen=<?= $dataPengabdian['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td class="fw-bold">2</td>
-                                <td>13716163</td>
-                                <td>Jontor</td>
-                                <td>
-                                  <a href="pengabdian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">3</td>
-                                <td>71289382</td>
-                                <td>Micho</td>
-                                <td>
-                                  <a href="pengabdian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="fw-bold">4</td>
-                                <td>10237598</td>
-                                <td>Misel</td>
-                                <td>
-                                  <a href="pengabdian_detail.php" class="btn btn-blue">Detail</a>
-                                </td>
-                              </tr>
+                              <?php endforeach; ?>
                             </tbody>
                           </table>
                         </div>

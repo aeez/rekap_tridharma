@@ -1,8 +1,6 @@
 <?php
 include('../config/functions/functionPenelitian.php');
 $penelitian = query("SELECT DISTINCT nama,nidn,tb_penelitian.id_dosen FROM tb_penelitian INNER JOIN tb_dosen ON tb_penelitian.id_dosen=tb_dosen.id_dosen");
-// $dosen = query("SELECT * FROM tb");
-
 ?>
 
 <!DOCTYPE html>

@@ -10,7 +10,7 @@ if ($_SESSION['level'] == 'customer') {
 }
 
 $jumlahPenelitian = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_penelitian WHERE id_dosen = $_SESSION[id_dosen]"));
-$jumlahPengabdianMasyarakat = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pengabdian_masyarakat WHERE id_dosen = $_SESSION[id_dosen]"));
+$jumlahPengabdianMasyarakat = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pengabdian WHERE id_dosen = $_SESSION[id_dosen]"));
 $jumlahBuku = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_buku WHERE id_dosen = $_SESSION[id_dosen]"));
 $jumlahJurnal = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_jurnal WHERE id_dosen = $_SESSION[id_dosen]"));
 $jumlahPemakalah = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tb_pemakalah WHERE id_dosen = $_SESSION[id_dosen]"));

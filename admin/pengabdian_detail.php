@@ -1,3 +1,9 @@
+<?php
+include('../config/functions/functionPengabdian.php');
+$id = $_GET['id_dosen'];
+$result = mysqli_query($conn, "SELECT * FROM tb_pengabdian INNER JOIN tb_dosen ON tb_pengabdian.id_dosen=tb_dosen.id_dosen WHERE tb_pengabdian.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,10 +40,11 @@
                 </div>
               </div>
               <!-- pengabdian -->
-              <div class="row pengabdian-dosen justify-content-center mb-4">
+              <div class="row penelitian-dosen justify-content-center mb-4">
                 <div class="col-lg-12">
-                  <div class="pengabdian-wrapper">
-                    <div class="wrapper-body rounded-4 p-4">
+                    <?php while ($data = mysqli_fetch_array($result)) { ?>
+                  <div class="penelitian-wrapper">
+                    <div class="wrapper-body rounded-4 p-4 mb-4">
                       <div class="row align-items-center">
                         <div class="col-lg-12">
                           <div class="table-responsive">
@@ -45,15 +52,12 @@
                               <tbody>
                                 <tr>
                                   <th width="20%">Judul pengabdian</th>
-                                  <td>
-                                    Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Sint doloribus natus
-                                    repudiandae qui vitae vero cumque.
-                                  </td>
+                                  <td><?= $data['judul_pengabdian']; ?></td>
+
                                 </tr>
                                 <tr>
                                   <th>Tahun</th>
-                                  <td>2015</td>
+                                   <td><?= $data['tahun']; ?></td>
                                 </tr>
                                 <tr>
                                   <th>Pendanaan</th>
@@ -61,18 +65,16 @@
                                 </tr>
                                 <tr>
                                   <th class="ps-4">1. Sumber Dana</th>
-                                  <td>Universitas</td>
+                                  <td><?= $data['sumber_dana']; ?></td>
                                 </tr>
                                 <tr>
                                   <th class="ps-4">2. Jumlah (Juta Rp.)</th>
-                                  <td>RP. 50 Juta</td>
+                                  <td>RP.<?= number_format($data["nominal_dana"], 0, ".", "."); ?>,-</td>
                                 </tr>
                                 <tr>
                                   <th>Link Google Drive</th>
-                                  <td>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Maxime at incidunt autem
-                                    tenetur, ratione provident.
+                                 <td>
+                                    <?= $data['link_file']; ?>
                                   </td>
                                 </tr>
                               </tbody>
@@ -88,7 +90,7 @@
                             style="width: 5em"
                           >
                             <a
-                              href="#"
+                              href="pengabdian_ubah.php?id_pengabdian=<?= $data['id_pengabdian']; ?>"
                               class="btn-blue btn w-100"
                               style="background-color: #002743; color: white"
                               >Edit</a
@@ -96,9 +98,10 @@
                           </div>
                           <div class="button-hapus-wrapper" style="width: 5em">
                             <a
-                              href="#"
+                              href="pengabdian_hapus.php?id_pengabdian=<?= $data['id_pengabdian']; ?>"
                               class="btn w-100"
                               style="border: 1px solid #002743"
+                               onclick="return confirm('Yakin?')"
                               >Hapus</a
                             >
                           </div>
@@ -106,6 +109,7 @@
                       </div>
                     </div>
                   </div>
+                   <?php } ?>
                 </div>
               </div>
               <!-- pengabdian -->

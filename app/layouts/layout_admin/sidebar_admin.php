@@ -10,27 +10,27 @@
             </li>
             <li class="link-item mb-2">
             <a href="dosen_tbl.php" class="nav-link px-3 py-2 rounded"
-                >Tambah Profil</a
+                >Manajemen Profil</a
             >
             </li>
             <li class="link-item mb-2">
             <a href="pendidikan_tbl.php" class="nav-link px-3 py-2 rounded"
-                >Tambah Riwayat Pendidikan</a
+                >Manajemen Riwayat Pendidikan</a
             >
             </li>
             <li class="link-item mb-2">
             <a href="penelitian_tbl.php" class="nav-link px-3 py-2 rounded"
-                >Tambah Penelitian</a
+                >Manajemen Penelitian</a
             >
             </li>
             <li class="link-item mb-2">
             <a href="pengabdian_tbl.php" class="nav-link px-3 py-2 rounded"
-                >Tambah Pengabdian Masyarakat</a
+                >Manajemen Pengabdian Masyarakat</a
             >
             </li>
             <li class="link-item mb-2">
             <a href="luaran_tbl.php" class="nav-link px-3 py-2 rounded"
-                >Tambah Luaran Hasil</a
+                >Manajemen Luaran Hasil</a
             >
             </li>
 

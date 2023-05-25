@@ -1,9 +1,9 @@
 <?php
-include('../config/functions/functionPenelitian.php');
+include('../config/functions/functionPengabdian.php');
 
-$id = $_GET['id_penelitian'];
+$id = $_GET['id_pengabdian'];
 
-$dataPenelitian = query("SELECT * FROM tb_penelitian WHERE id_penelitian = $id")[0];
+$dataPengabdian = query("SELECT * FROM tb_pengabdian WHERE id_pengabdian = $id")[0];
 
 if (isset($_POST['submit'])) {
 
@@ -11,14 +11,14 @@ if (isset($_POST['submit'])) {
         echo "
             <script>
                 alert('Data berhasil diubah!');
-                document.location.href = 'penelitian_tbl.php';
+                document.location.href = 'pengabdian_tbl.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data gagal diubah!');
-                document.location.href = 'penelitian_ubah.php';
+                document.location.href = 'pengabdian_ubah.php';
             </script>
         ";
     }
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ubah Penelitian | Tri Dharma</title>
+    <title>Ubah Pengabdian Masyarakat | Tri Dharma</title>
 
     <?php include ('../app/layouts/layout_admin/link_admin.php'); ?>
 
@@ -56,31 +56,31 @@ if (isset($_POST['submit'])) {
                 class="row welcome py-2 mb-4 rounded-4 justify-content-center"
               >
                 <div class="col-11 col-lg-12 welcome-text">
-                  <h2 class="fw-bold">Ubah Penelitian</h2>
+                  <h2 class="fw-bold">Ubah Pengabdian Masyarakat</h2>
                 </div>
               </div>
-              <!-- ubah Penelitian -->
+              <!-- ubah pengabdian -->
               <div class="row profile-dosen justify-content-center">
                 <div class="col-lg-12">
                   <div class="profile-wrapper">
                     <div class="wrapper-body rounded-4 p-4">
-                      <div class="row ubah-penelitian">
+                      <div class="row ubah-pengabdian">
                         <div class="form-ubah">
                             <!-- form ubah start -->
                           <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
-                                <input type="hidden" name="id_penelitian" value="<?= $dataPenelitian['id_penelitian']; ?>">
+                                <input type="hidden" name="id_pengabdian" value="<?= $dataPengabdian['id_pengabdian']; ?>">
                                 <div class="mb-3">
-                                  <label for="judul_penelitian" class="form-label"
-                                    >Judul Penelitian</label
+                                  <label for="judul_pengabdian" class="form-label"
+                                    >Judul pengabdian</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="judul_penelitian"
-                                    name="judul_penelitian"
-                                    value="<?= $dataPenelitian['judul_penelitian']; ?>"
+                                    id="judul_pengabdian"
+                                    name="judul_pengabdian"
+                                    value="<?= $dataPengabdian['judul_pengabdian']; ?>"
                                     required
                                   />
                                 </div>
@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="tahun"
                                     name="tahun"
-                                    value="<?= $dataPenelitian['tahun']; ?>"
+                                    value="<?= $dataPengabdian['tahun']; ?>"
                                     required
                                   />
                                 </div>
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="sumber_dana"
                                     name="sumber_dana"
-                                    value="<?= $dataPenelitian['sumber_dana']; ?>"
+                                    value="<?= $dataPengabdian['sumber_dana']; ?>"
                                     required
                                   />
                                 </div>
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="nominal_dana"
                                     name="nominal_dana"
-                                    value="<?= $dataPenelitian['nominal_dana']; ?>"
+                                    value="<?= $dataPengabdian['nominal_dana']; ?>"
                                     required
                                   />
                                 </div>
@@ -132,11 +132,11 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="link_file"
                                     name="link_file"
-                                    value="<?= $dataPenelitian['link_file']; ?>"
+                                    value="<?= $dataPengabdian['link_file']; ?>"
                                     required
                                   />
                                 </div>
-                                <input type="hidden" name="id_dosen" value="<?= $dataPenelitian['id_dosen']; ?>">
+                                <input type="hidden" name="id_dosen" value="<?= $dataPengabdian['id_dosen']; ?>">
                               </div>
                               <div class="">
                                   <button
