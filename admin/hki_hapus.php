@@ -1,20 +1,20 @@
 <?php
-include('../config/functions/functionJurnal.php');
+include('../config/functions/functionHki.php');
 
-$id = $_GET['id_jurnal'];
+$id = $_GET['id_hki'];
 
 if (hapus($id) > 0) {
     echo "
     <script>
         alert('Data berhasil dihapus!');
-        document.location.href = 'buku_tbl.php';
+        document.location.href = 'hki_tbl.php';
     </script>
 ";
 } else {
     echo "
     <script>
         alert('Data gagal dihapus!');
-        document.location.href = 'jurnal_detail.php';
+        document.location.href = 'hki_detail.php';
     </script>
 ";
 }

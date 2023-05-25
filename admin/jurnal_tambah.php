@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
         echo "
             <script>
                 alert('Data berhasil ditambah!');
-                document.location.href = 'luaran_tbl.php';
+                document.location.href = 'jurnal_tbl.php';
             </script>
         ";
     } else {

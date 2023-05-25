@@ -1,3 +1,11 @@
+<?php
+include('../config/functions/functionHki.php');
+
+$id = $_GET['id_dosen'];
+
+$result = mysqli_query($conn, "SELECT * FROM tb_hki INNER JOIN tb_dosen ON tb_hki.id_dosen=tb_dosen.id_dosen WHERE tb_hki.id_dosen = $id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +45,8 @@
               </div>
 
               <div class="row table-haki-section justify-content-center">
-                <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4">
+                <?php while ($data = mysqli_fetch_array($result)) { ?>
+                <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4 mb-3">
                   <div class="row heading-haki mb-3">
                     <div class="col-lg-12">
                       <h5 class="fw-bold">HKI</h5>
@@ -54,27 +63,23 @@
                                 Judul/tema/jenis rakayasa sosial lainnya yang
                                 telah diterapkan
                               </th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['judul_hki']; ?></td>
                             </tr>
                             <tr>
                               <th>Tahun</th>
-                              <td>Bokashi adalah pupuk terbaik</td>
+                              <td><?= $data['tahun']; ?></td>
                             </tr>
                             <tr>
                               <th>Tempat Penerapan</th>
-                              <td>Ruangan Seminar</td>
+                              <td><?= $data['tempat_penerapan']; ?></td>
                             </tr>
                             <tr>
                               <th>Respon Masyarakat</th>
-                              <td>
-                                Sangat senang kaya ngeliat desain websitenya
-                              </td>
+                              <td><?= $data['respon_masyarakat']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                              <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -86,7 +91,7 @@
                     <div class="col-12 d-flex justify-content-end">
                       <div class="button-edit-wrapper me-2" style="width: 5em">
                         <a
-                          href="#"
+                          href="hki_ubah.php?id_hki=<?= $data['id_hki']; ?>"
                           class="btn-blue btn w-100"
                           style="background-color: #002743; color: white"
                           >Edit</a
@@ -94,7 +99,7 @@
                       </div>
                       <div class="button-hapus-wrapper" style="width: 5em">
                         <a
-                          href="#"
+                          href="hki_hapus.php?id_hki=<?= $data['id_hki']; ?>"
                           class="btn-blue btn w-100"
                           style="border: 1px solid #002743"
                           >Hapus</a
@@ -103,7 +108,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                    <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>

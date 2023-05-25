@@ -1,9 +1,9 @@
 <?php
-include('../config/functions/functionBuku.php');
+include('../config/functions/functionHki.php');
 
-$id = $_GET['id_buku'];
+$id = $_GET['id_hki'];
 
-$dataBuku = query("SELECT * FROM tb_buku WHERE id_buku = $id")[0];
+$dataHki = query("SELECT * FROM tb_hki WHERE id_hki = $id")[0];
 
 if (isset($_POST['submit'])) {
 
@@ -11,14 +11,14 @@ if (isset($_POST['submit'])) {
         echo "
             <script>
                 alert('Data berhasil diubah!');
-                document.location.href = 'buku_tbl.php';
+                document.location.href = 'hki_tbl.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data gagal diubah!');
-                document.location.href = 'buku_ubah.php';
+                document.location.href = 'hki_ubah.php';
             </script>
         ";
     }
@@ -70,17 +70,17 @@ if (isset($_POST['submit'])) {
                           <form action="" method="POST">
                             <div class="row justify-content-center">
                               <div class="col-lg-12">
-                                <input type="hidden" name="id_buku" value="<?= $dataBuku['id_buku']; ?>">
+                                <input type="hidden" name="id_hki" id="id_hki" value="<?= $dataHki['id_hki']; ?>">
                                 <div class="mb-3">
-                                  <label for="id_buku" class="form-label"
-                                    >Judul Buku</label
+                                  <label for="judul_hki" class="form-label"
+                                    >Judul HKI</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="judul_buku"
-                                    name="judul_buku"
-                                    value="<?= $dataBuku['judul_buku']; ?>"
+                                    id="judul_hki"
+                                    name="judul_hki"
+                                    value="<?= $dataHki['judul_hki']; ?>"
                                     required
                                   />
                                 </div>
@@ -93,36 +93,37 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="tahun"
                                     name="tahun"
-                                    value="<?= $dataBuku['tahun']; ?>"
+                                    value="<?= $dataHki['tahun']; ?>"
                                     required
                                   />
                                 </div>
                                 <div class="mb-3">
-                                  <label for="sumber_dana" class="form-label"
-                                    >Jumlah Halaman</label
-                                  >
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    id="jumlah_halaman"
-                                    name="jumlah_halaman"
-                                    value="<?= $dataBuku['jumlah_halaman']; ?>"
-                                    required
-                                  />
-                                </div>
-                                <div class="mb-3">
-                                  <label for="penerbit" class="form-label"
-                                    >Penerbit</label
+                                  <label for="tempat_penerapan" class="form-label"
+                                    >Tempat Penerapan</label
                                   >
                                   <input
                                     type="text"
                                     class="form-control"
-                                    id="penerbit"
-                                    name="penerbit"
-                                    value="<?= $dataBuku['penerbit']; ?>"
+                                    id="tempat_penerapan"
+                                    name="tempat_penerapan"
+                                    value="<?= $dataHki['tempat_penerapan']; ?>"
                                     required
                                   />
                                 </div>
+                                <div class="mb-3">
+                                  <label for="respon_masyarakat" class="form-label"
+                                    >Respon Masyarakat</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="respon_masyarakat"
+                                    name="respon_masyarakat"
+                                    value="<?= $dataHki['respon_masyarakat']; ?>"
+                                    required
+                                  />
+                                </div>
+
                                 <div class="mb-3">
                                   <label for="link_file" class="form-label"
                                     >Link File (Google Drive)</label
@@ -132,11 +133,11 @@ if (isset($_POST['submit'])) {
                                     class="form-control"
                                     id="link_file"
                                     name="link_file"
-                                    value="<?= $dataBuku['link_file']; ?>"
+                                    value="<?= $dataHki['link_file']; ?>"
                                     required
                                   />
                                 </div>
-                                <input type="hidden" name="id_dosen" value="<?= $dataBuku['id_dosen']; ?>">
+                                <input type="hidden" name="id_dosen" value="<?= $dataHki['id_dosen']; ?>">
                               </div>
                               <div class="">
                                   <button

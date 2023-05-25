@@ -1,6 +1,6 @@
 <?php
-include('../config/functions/functionBuku.php');
-$buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOIN tb_dosen ON tb_buku.id_dosen=tb_dosen.id_dosen");
+include('../config/functions/functionHki.php');
+$hki = query("SELECT DISTINCT nama,nidn,tb_hki.id_dosen FROM tb_hki INNER JOIN tb_dosen ON tb_hki.id_dosen=tb_dosen.id_dosen");
 ?>
 
 <!DOCTYPE html>
@@ -60,13 +60,13 @@ $buku = query("SELECT DISTINCT nama,nidn,tb_buku.id_dosen FROM tb_buku INNER JOI
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                <?php foreach ($buku as $data) : ?>
+                                <?php foreach ($hki as $dataHki) : ?>
                               <tr>
                                 <td class="fw-bold"><?= $no++; ?></td>
-                                <td><?= $dataBuku['nidn']; ?></td>
-                                <td><?= $dataBuku['nama']; ?></td>
+                                <td><?= $dataHki['nidn']; ?></td>
+                                <td><?= $dataHki['nama']; ?></td>
                                 <td class="button">
-                                  <a href="jurnal_detail.php?id_dosen=<?= $dataBuku['id_dosen']; ?>" class="btn btn-blue">Detail</a>
+                                  <a href="hki_detail.php?id_dosen=<?= $dataHki['id_dosen']; ?>" class="btn btn-blue">Detail</a>
                                 </td>
                               </tr>
                                 <?php endforeach; ?>

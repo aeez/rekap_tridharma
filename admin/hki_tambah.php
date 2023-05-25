@@ -1,5 +1,5 @@
 <?php
-include('../config/functions/functionPenelitian.php');
+include('../config/functions/functionHki.php');
 
 $result = mysqli_query($conn, "SELECT * FROM tb_dosen");
 
@@ -9,14 +9,14 @@ if (isset($_POST['submit'])) {
         echo "
             <script>
                 alert('Data berhasil ditambah!');
-                document.location.href = 'penelitian_tbl.php';
+                document.location.href = 'hki_tbl.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data gagal ditambah!');
-                document.location.href = 'penelitian_tambah.php';
+                document.location.href = 'hki_tambah.php';
             </script>
         ";
     }

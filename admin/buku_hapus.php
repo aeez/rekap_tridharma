@@ -7,7 +7,7 @@ if (hapus($id) > 0) {
     echo "
     <script>
         alert('Data berhasil dihapus!');
-        document.location.href = 'luaran_tbl.php';
+        document.location.href = 'buku_tbl.php';
     </script>
 ";
 } else {

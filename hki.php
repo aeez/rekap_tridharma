@@ -1,10 +1,21 @@
+<?php
+include('./config/functions/dosen/functionAuth.php');
+
+// $dosen_id = $_SESSION['id_dosen'];
+$result1 = mysqli_query($conn, "SELECT * FROM tb_dosen WHERE id_dosen = $_SESSION[id_dosen]");
+$dataDosen = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($conn, "SELECT * FROM tb_hki WHERE id_dosen = $_SESSION[id_dosen]");
+// $pendidikan = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TRIDHARMA</title>
-    
+
     <?php include ('./app/layouts/link.php'); ?>
 
     <!-- CSS -->
@@ -41,7 +52,8 @@
               </div>
 
               <div class="row table-haki-section justify-content-center">
-                <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4">
+              <?php while ($data = mysqli_fetch_array($result2)) { ?>
+              <div class="col-11 col-lg-12 haki-table-wrapper py-3 rounded-4">
                   <div class="row heading-haki mb-3">
                     <div class="col-lg-12">
                       <h5 class="fw-bold">HKI</h5>
@@ -58,27 +70,24 @@
                                 Judul/tema/jenis rakayasa sosial lainnya yang
                                 telah diterapkan
                               </th>
-                              <td>
-                                Pemanfaatan Meeting Bokashi pada Bulan Ramadhan
-                              </td>
+                              <td><?= $data['judul_hki']; ?></td>
                             </tr>
                             <tr>
                               <th>Tahun</th>
-                              <td>Bokashi adalah pupuk terbaik</td>
+                              <td><?= $data['tahun']; ?></td>
+
                             </tr>
                             <tr>
                               <th>Tempat Penerapan</th>
-                              <td>Ruangan Seminar</td>
+                              <td><?= $data['tempat_penerapan']; ?></td>
                             </tr>
                             <tr>
                               <th>Respon Masyarakat</th>
-                              <td>
-                                Sangat senang kaya ngeliat desain websitenya
-                              </td>
+                               <td><?= $data['respon_masyarakat']; ?></td>
                             </tr>
                             <tr>
                               <th>Link Google Drive File</th>
-                              <td>https//unimed.com</td>
+                               <td><?= $data['link_file']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -86,7 +95,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
+            <?php } ?>
+            </div>
               <!-- book -->
             </div>
           </section>
