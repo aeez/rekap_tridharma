@@ -55,10 +55,10 @@
                               <th>Jenis Penghargaan</th>
                               <td>Medali Emas</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                               <th>Institusi Pemberi Penghargaan</th>
                               <td>Institut Negeri Medan</td>
-                            </tr>
+                            </tr> -->
                             <tr>
                               <th>Tahun</th>
                               <td>2023</td>
