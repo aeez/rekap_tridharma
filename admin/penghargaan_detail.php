@@ -92,7 +92,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_penghargaan INNER JOIN tb_dosen 
                           >Edit</a
                         >
                       </div>
-                      <div class="button-hapus-wrapper" style="width: 5em">
+                      <div class="button-kelhapus-wrapper" style="width: 5em">
                         <a
                           href="penghargaan_hapus.php?id_penghargaan=<?= $data['id_penghargaan']; ?>"
                           class="btn w-100"
