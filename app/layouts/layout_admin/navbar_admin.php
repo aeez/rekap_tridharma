@@ -20,7 +20,7 @@
                     <small>Ilmu Komputer</small>
                   </div>
                   <div class="logo-name-mobile d-block d-lg-none">
-                    <p class="m-0 fw-bold fs-4">UNIMED</p>
+                    <p class="m-0 fw-bold fs-4">TRIDHARMA</p>
                   </div>
                 </div>
               </div>
